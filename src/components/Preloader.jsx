@@ -2,6 +2,8 @@
 import { useEffect, useRef } from 'react';
 import './Preloader.css'; // Import the CSS for the preloader
 
+import logoImage from '../assets/OQPX091.png'; // Import the logo image
+
 const Preloader = ({ onLoadingComplete }) => {
   const preloaderRef = useRef(null);
 
@@ -45,7 +47,7 @@ const Preloader = ({ onLoadingComplete }) => {
                 <div className="absolute inset-0 rounded-full opacity-50 bg-gradient-to-r from-teal-400 to-purple-600 blur-2xl"></div>
                 {/* Logo Image */}
                 <img 
-                  src="/OQPX091.png" 
+                  src={logoImage} 
                   alt="Nebula Logo" 
                   className="relative w-20 h-20 md:w-32 md:h-32 animate-float-bounce drop-shadow-2xl"
                   onError={(e) => { 
