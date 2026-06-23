@@ -1,5 +1,6 @@
 import React from 'react';
 import { Quote, Award, Target, Users, Shield, Clock, ChevronRight } from 'lucide-react';
+import imageMessage from '../../assets/OQPX091.png';
 
 const ChairmanMessage = () => {
   return (
@@ -34,7 +35,7 @@ const ChairmanMessage = () => {
               {/* Image placeholder - Replace with actual image */}
               <div className="relative h-96 lg:h-full min-h-[400px] bg-gradient-to-br from-[#228296] to-[#6f3c85] flex items-center justify-center">
                 <img 
-                  src="/OQPX091.png" 
+                  src={imageMessage} 
                   alt="Chairman" 
                   className="object-cover w-full h-full opacity-90"
                 />

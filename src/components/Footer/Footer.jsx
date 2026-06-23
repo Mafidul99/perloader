@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, ExternalLink, Clock, Shield, MoveRight  } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import FooterLogo from '../../assets/OQPX091.png';
 
 
 const Footer = () => {
@@ -85,7 +86,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4 space-x-2">
               <div className="flex items-center justify-center">
-                <img src="../../../OQPX091.png" alt="NCOSL Logo" className="w-12 h-12 rounded-full" />
+                <img src={FooterLogo} alt="NCOSL Logo" className="w-12 h-12 rounded-full" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
                 NCOSL
