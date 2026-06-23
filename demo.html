@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shantishwar Credit Society | Modern Banking</title>
+  <!-- Tailwind CSS + Google Fonts + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      transition: background-color 0.3s ease, color 0.2s ease;
+    }
+    /* custom gradient text / bg utilities */
+    .gradient-bg {
+      background: linear-gradient(135deg, #228296, #6f3c85);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #228296, #6f3c85);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .dark .gradient-text {
+      background: linear-gradient(135deg, #6bc2d0, #c28be0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    /* card hover lift effect */
+    .hover-lift {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+    .dark .hover-lift:hover {
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.4);
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    @media (min-width: 768px) {
+      .stat-number {
+        font-size: 3rem;
+      }
+    }
+    /* custom slider dots (simple) */
+    .slider-dot {
+      transition: all 0.2s;
+    }
+    /* dark mode overrides for default tailwind classes */
+    .dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    .dark .bg-gray-50 {
+      background-color: #0f172a !important;
+    }
+    .dark .text-gray-700, .dark .text-gray-600, .dark .text-gray-500 {
+      color: #cbd5e1 !important;
+    }
+    .dark .border-gray-200 {
+      border-color: #334155 !important;
+    }
+    .dark .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+    .dark .bg-gradient-to-br {
+      background: #0f172a;
+    }
+    /* simple iframe map responsive */
+    .map-iframe {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      border-radius: 1rem;
+    }
+  </style>
+</head>
+<body class="text-gray-800 bg-white dark:bg-slate-900 dark:text-gray-100">
+
+  <!-- ========== MODERN HEADER ========== -->
+  <header class="sticky top-0 z-50 transition-all border-b border-gray-200 shadow-sm backdrop-blur-md bg-white/80 dark:bg-slate-900/80 dark:border-gray-800">
+    <div class="container flex flex-wrap items-center justify-between px-5 py-3 mx-auto">
+      <!-- logo area -->
+      <div class="flex items-center space-x-3">
+        <div class="flex items-center justify-center w-10 h-10 shadow-md gradient-bg rounded-xl">
+          <span class="text-xl font-bold text-white">S</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight text-gray-800 dark:text-white">Shantishwar</h1>
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-400 -mt-1">Multi-State Credit Society</p>
+        </div>
+      </div>
+
+      <!-- desktop nav + dark mode toggle + CTA -->
+      <div class="items-center hidden gap-6 md:flex">
+        <nav class="flex space-x-6 text-sm font-medium">
+          <a href="#" class="text-gray-700 hover:text-[#228296] dark:text-gray-200 dark:hover:text-[#6bc2d0] transition">Home</a>
+          <a href="#" class="text-gray-700 hover:text-[#228296] dark:text-gray-200 dark:hover:text-[#6bc2d0]">Services</a>
+          <a href="#" class="text-gray-700 hover:text-[#228296] dark:text-gray-200 dark:hover:text-[#6bc2d0]">Loans</a>
+          <a href="#" class="text-gray-700 hover:text-[#228296] dark:text-gray-200 dark:hover:text-[#6bc2d0]">Deposits</a>
+          <a href="#" class="text-gray-700 hover:text-[#228296] dark:text-gray-200 dark:hover:text-[#6bc2d0]">Contact</a>
+        </nav>
+        <!-- Dark mode toggle -->
+        <button id="darkModeToggle" class="p-2 text-gray-600 transition bg-gray-100 rounded-full dark:bg-gray-800 dark:text-yellow-300 focus:outline-none">
+          <i id="darkIcon" class="fas fa-moon"></i>
+        </button>
+        <a href="#" class="px-5 py-2 text-sm font-semibold text-white transition transform rounded-full shadow-md gradient-bg hover:shadow-lg hover:scale-105">Open Account</a>
+      </div>
+
+      <!-- mobile menu button + dark mode -->
+      <div class="flex items-center gap-3 md:hidden">
+        <button id="mobileDarkToggle" class="p-2 text-gray-600 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-yellow-300">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="mobileMenuBtn" class="text-2xl text-gray-700 dark:text-gray-200 focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- mobile navigation drawer (simple) -->
+    <div id="mobileMenu" class="flex flex-col hidden px-5 py-4 space-y-3 bg-white border-t border-gray-200 shadow-lg md:hidden dark:bg-slate-800 dark:border-gray-700">
+      <a href="#" class="py-1 font-medium text-gray-700 dark:text-gray-200">Home</a>
+      <a href="#" class="py-1 font-medium text-gray-700 dark:text-gray-200">Services</a>
+      <a href="#" class="py-1 font-medium text-gray-700 dark:text-gray-200">Loans</a>
+      <a href="#" class="py-1 font-medium text-gray-700 dark:text-gray-200">Deposits</a>
+      <a href="#" class="py-1 font-medium text-gray-700 dark:text-gray-200">Contact</a>
+      <a href="#" class="py-2 mt-2 text-center text-white rounded-full gradient-bg">Open Account</a>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION WITH GRADIENT & DARK MODE AWARE ========== -->
+  <section class="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-[#228296]/10 via-white to-[#6f3c85]/10 dark:from-[#228296]/20 dark:via-slate-800 dark:to-[#6f3c85]/20">
+    <div class="container flex flex-col items-center justify-between gap-12 px-5 mx-auto text-center md:px-8 md:text-left md:flex-row">
+      <div class="space-y-5 md:w-1/2">
+        <div class="inline-block px-3 py-1 text-xs font-semibold text-white rounded-full gradient-bg">Trust & Transparency</div>
+        <h1 class="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">Banking that <span class="gradient-text">empowers</span> your tomorrow</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300">Operational 365 days | 9 AM – 7 PM | Serving rural & urban India with ethical credit solutions.</p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#" class="flex items-center gap-2 py-3 font-semibold text-white transition rounded-full shadow-md gradient-bg px-7 hover:shadow-xl"><i class="fas fa-hand-holding-usd"></i> Apply Loan</a>
+          <a href="#" class="border border-[#228296] text-[#228296] dark:text-[#6bc2d0] px-7 py-3 rounded-full font-semibold hover:bg-[#228296]/10 transition">Fixed Deposit →</a>
+        </div>
+        <!-- stats row -->
+        <div class="grid grid-cols-2 gap-4 pt-8 sm:grid-cols-4">
+          <div><span class="stat-number gradient-text">25k+</span><p class="text-sm text-gray-500 dark:text-gray-400">Happy Members</p></div>
+          <div><span class="stat-number gradient-text">₹41Cr</span><p class="text-sm text-gray-500 dark:text-gray-400">Business Volume</p></div>
+          <div><span class="stat-number gradient-text">4+</span><p class="text-sm text-gray-500 dark:text-gray-400">Branches</p></div>
+          <div><span class="stat-number gradient-text">39</span><p class="text-sm text-gray-500 dark:text-gray-400">Staff Strength</p></div>
+        </div>
+      </div>
+      <div class="flex justify-center md:w-1/2">
+        <div class="relative w-80 h-80 bg-gradient-to-tr from-[#228296] to-[#6f3c85] rounded-3xl shadow-2xl flex items-center justify-center p-2">
+          <div class="flex flex-col items-center justify-center w-full h-full p-5 text-center bg-white shadow-inner dark:bg-slate-800 rounded-2xl">
+            <i class="mb-3 text-5xl fas fa-shield-alt gradient-text"></i>
+            <p class="text-lg font-semibold text-gray-800 dark:text-white">RBI compliant &<br>Multi-State Reg.</p>
+            <span class="px-3 py-1 mt-4 text-xs text-green-600 bg-green-100 rounded-full dark:bg-green-900/40">Reg: MSCS/CR/1521/2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICE CARDS (Tailwind + Gradient) ========== -->
+  <section class="py-16 bg-white dark:bg-slate-900">
+    <div class="container px-5 mx-auto">
+      <div class="max-w-2xl mx-auto mb-12 text-center">
+        <span class="text-[#228296] dark:text-[#6bc2d0] font-semibold tracking-wide">OUR OFFERINGS</span>
+        <h2 class="mt-2 text-3xl font-bold md:text-4xl">Modern financial <span class="gradient-text">services</span> for everyone</h2>
+        <div class="w-24 h-1 mx-auto mt-4 rounded-full gradient-bg"></div>
+      </div>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- card 1 -->
+        <div class="p-6 transition border border-gray-100 shadow-md bg-gray-50 dark:bg-slate-800/60 rounded-2xl hover-lift dark:border-gray-700">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 gradient-bg rounded-xl"><i class="text-xl text-white fas fa-piggy-bank"></i></div>
+          <h3 class="text-xl font-bold">Savings Account</h3>
+          <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">High interest, zero hassle. Digital passbook & UPI enabled.</p>
+          <a href="#" class="inline-flex items-center gap-1 text-[#228296] dark:text-[#6bc2d0] font-medium mt-4">Learn more <i class="text-xs fas fa-arrow-right"></i></a>
+        </div>
+        <!-- card 2 -->
+        <div class="p-6 transition shadow-md bg-gray-50 dark:bg-slate-800/60 rounded-2xl hover-lift">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 gradient-bg rounded-xl"><i class="text-white fas fa-chart-line"></i></div>
+          <h3 class="text-xl font-bold">Fixed Deposits</h3>
+          <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Secure returns up to 9% p.a. Flexible tenures, attractive rates.</p>
+          <a href="#" class="inline-flex items-center gap-1 text-[#228296] dark:text-[#6bc2d0] font-medium mt-4">Calculate returns <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- card 3 -->
+        <div class="p-6 transition shadow-md bg-gray-50 dark:bg-slate-800/60 rounded-2xl hover-lift">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 gradient-bg rounded-xl"><i class="text-white fas fa-hand-holding-usd"></i></div>
+          <h3 class="text-xl font-bold">Personal Loan</h3>
+          <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Quick approval, minimal documentation, competitive interest.</p>
+          <a href="#" class="inline-flex items-center gap-1 text-[#228296] dark:text-[#6bc2d0] font-medium mt-4">Check eligibility <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- card 4 -->
+        <div class="p-6 transition shadow-md bg-gray-50 dark:bg-slate-800/60 rounded-2xl hover-lift">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 gradient-bg rounded-xl"><i class="text-white fas fa-mobile-alt"></i></div>
+          <h3 class="text-xl font-bold">Digital Banking</h3>
+          <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Internet banking, UPI, WhatsApp banking & instant transfers.</p>
+          <a href="#" class="inline-flex items-center gap-1 text-[#228296] dark:text-[#6bc2d0] font-medium mt-4">Download app <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINANCIAL HIGHLIGHTS (DARK MODE COMPATIBLE) ========== -->
+  <section class="py-16 bg-gradient-to-r from-[#228296]/5 to-[#6f3c85]/5 dark:from-slate-800 dark:to-slate-800/60">
+    <div class="container px-5 mx-auto">
+      <div class="mb-10 text-center">
+        <h2 class="text-3xl font-bold">Financial Year <span class="gradient-text">2024-2025</span></h2>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">Strength, growth & sustainability</p>
+      </div>
+      <div class="grid max-w-5xl gap-6 mx-auto md:grid-cols-3">
+        <div class="p-6 text-center bg-white shadow-md dark:bg-slate-800 rounded-2xl"><i class="mb-2 text-4xl fas fa-university gradient-text"></i><h4 class="text-xl font-bold">₹23.77 Cr</h4><p class="text-gray-500 dark:text-gray-400">Total Deposits</p></div>
+        <div class="p-6 text-center bg-white shadow-md dark:bg-slate-800 rounded-2xl"><i class="mb-2 text-4xl fas fa-chart-pie gradient-text"></i><h4 class="text-xl font-bold">₹10.97 Cr</h4><p class="text-gray-500 dark:text-gray-400">Loan Disbursed</p></div>
+        <div class="p-6 text-center bg-white shadow-md dark:bg-slate-800 rounded-2xl"><i class="mb-2 text-4xl fas fa-chart-simple gradient-text"></i><h4 class="text-xl font-bold">₹5.27 Lac</h4><p class="text-gray-500 dark:text-gray-400">Net Profit</p></div>
+      </div>
+      <div class="mt-8 text-center"><span class="inline-block px-5 py-2 text-sm bg-white rounded-full shadow dark:bg-slate-800"><i class="fas fa-chart-line text-[#228296] mr-2"></i>Share Capital: ₹1Cr | Reserves: ₹3.5Cr</span></div>
+    </div>
+  </section>
+
+  <!-- ========== MISSION AND VALUES ========== -->
+  <section class="container px-5 py-16 mx-auto">
+    <div class="flex flex-col items-center gap-12 md:flex-row">
+      <div class="order-2 md:w-1/2 md:order-1">
+        <span class="text-[#228296] dark:text-[#6bc2d0] font-semibold">WHY CHOOSE US</span>
+        <h2 class="mt-2 text-3xl font-bold">Committed to <span class="gradient-text">community-first</span> banking</h2>
+        <div class="mt-6 space-y-3 text-gray-600 dark:text-gray-300">
+          <div class="flex gap-3"><i class="fas fa-check-circle text-[#228296] mt-1"></i><span>Available 365 days, extended hours 9AM–7PM</span></div>
+          <div class="flex gap-3"><i class="fas fa-check-circle text-[#228296] mt-1"></i><span>Pigmy deposits & doorstep collection for rural areas</span></div>
+          <div class="flex gap-3"><i class="fas fa-check-circle text-[#228296] mt-1"></i><span>Women SHG loans & Mahila Bachat Gat schemes</span></div>
+          <div class="flex gap-3"><i class="fas fa-check-circle text-[#228296] mt-1"></i><span>Instant digital services: UPI, SMS, Mobile App</span></div>
+        </div>
+        <a href="#" class="inline-block px-6 py-2 mt-8 text-white rounded-full shadow gradient-bg">Know More <i class="ml-1 fas fa-arrow-right"></i></a>
+      </div>
+      <div class="flex justify-center order-1 md:w-1/2 md:order-2">
+        <div class="relative overflow-hidden border-8 border-white rounded-full shadow-2xl w-80 h-80 dark:border-slate-700">
+          <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=400&h=400&fit=crop" alt="team" class="object-cover w-full h-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCATION / MAP SECTION ========== -->
+  <section class="py-12 bg-gray-50 dark:bg-slate-800/50">
+    <div class="container px-5 mx-auto">
+      <div class="mb-8 text-center"><h2 class="text-2xl font-bold">Find <span class="gradient-text">our headquarters</span></h2><p class="text-gray-600 dark:text-gray-300">N-4 Cidco, Near Kamgar Chowk, Chhatrapati Sambhajinagar</p></div>
+      <div class="max-w-4xl mx-auto overflow-hidden shadow-xl rounded-xl">
+        <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.3079521077752!2d75.36416957522557!3d19.869214281505705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb7c9a7b1c2b8f%3A0x8b5b5b5b5b5b5b5b!2sN-4%20Cidco%2C%20Chhatrapati%20Sambhajinagar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 mt-8 text-center">
+        <div><i class="text-2xl fas fa-phone-alt gradient-text"></i><p class="font-medium">+91 7767006627</p></div>
+        <div><i class="text-2xl fas fa-envelope gradient-text"></i><p class="font-medium">contact@shantishwar.in</p></div>
+        <div><i class="text-2xl fas fa-id-card gradient-text"></i><p class="font-medium">IFSC: YESB0CMSNOC</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SIMPLE NEWSLETTER & FOOTER GRADIENT ========== -->
+  <footer class="pt-12 pb-6 text-white gradient-bg">
+    <div class="container px-5 mx-auto">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div><i class="mb-3 text-3xl fas fa-building opacity-80"></i><h4 class="text-lg font-bold">Shantishwar</h4><p class="text-sm opacity-85">Multi-State Co-Operative Credit Society Ltd.<br>Reg No: MSCS/CR/1521/2024</p></div>
+        <div><h4 class="mb-3 font-semibold text-md">Quick Links</h4><ul class="space-y-1 text-sm opacity-90"><li><a href="#" class="hover:underline">About Bank</a></li><li><a href="#" class="hover:underline">Fixed Deposit Rates</a></li><li><a href="#" class="hover:underline">Gold Loan</a></li><li><a href="#" class="hover:underline">Branch Locator</a></li></ul></div>
+        <div><h4 class="mb-3 font-semibold text-md">Services</h4><ul class="space-y-1 text-sm opacity-90"><li><a href="#" class="hover:underline">Internet Banking</a></li><li><a href="#" class="hover:underline">Mobile Banking App</a></li><li><a href="#" class="hover:underline">WhatsApp Banking</a></li><li><a href="#" class="hover:underline">UPI / QR Pay</a></li></ul></div>
+        <div><h4 class="mb-3 font-semibold text-md">Subscribe</h4><div class="flex overflow-hidden rounded-full bg-white/20"><input type="email" placeholder="Your email" class="w-full px-3 py-2 text-sm text-white bg-transparent placeholder-white/70 focus:outline-none"><button class="bg-white text-[#228296] px-4 font-semibold text-sm">→</button></div><p class="mt-2 text-xs opacity-80">Get latest schemes & updates</p></div>
+      </div>
+      <div class="flex flex-col items-center justify-between pt-6 mt-8 text-sm text-center border-t border-white/20 opacity-80 md:flex-row">
+        <span>© 2025 Shantishwar Multi-State Co-Operative Credit Society Ltd. All Rights Reserved.</span>
+        <div class="flex gap-4 mt-2 md:mt-0"><i class="transition fab fa-facebook-f hover:scale-110"></i><i class="fab fa-twitter hover:scale-110"></i><i class="fab fa-instagram hover:scale-110"></i><i class="fab fa-youtube hover:scale-110"></i></div>
+      </div>
+      <div class="text-center text-[11px] mt-4 opacity-70">Powered by inclusive financial technology | Operational 365 days</div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" class="fixed z-40 items-center justify-center hidden w-10 h-10 text-white transition-all rounded-full shadow-lg bottom-6 right-6 gradient-bg hover:scale-110"><i class="text-sm fas fa-arrow-up"></i></button>
+
+  <!-- DARK MODE & MOBILE SCRIPT -->
+  <script>
+    (function() {
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const mobileDarkToggle = document.getElementById('mobileDarkToggle');
+      const darkIcon = document.getElementById('darkIcon');
+      const htmlElement = document.documentElement;
+      // check localStorage
+      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+        if(darkIcon) darkIcon.className = 'fas fa-sun';
+      } else {
+        htmlElement.classList.remove('dark');
+        if(darkIcon) darkIcon.className = 'fas fa-moon';
+      }
+      function toggleDark() {
+        if (htmlElement.classList.contains('dark')) {
+          htmlElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          if(darkIcon) darkIcon.className = 'fas fa-moon';
+        } else {
+          htmlElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          if(darkIcon) darkIcon.className = 'fas fa-sun';
+        }
+      }
+      if(darkModeToggle) darkModeToggle.addEventListener('click', toggleDark);
+      if(mobileDarkToggle) mobileDarkToggle.addEventListener('click', toggleDark);
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if(mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+      // Back to top visibility
+      const backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backBtn.classList.remove('hidden');
+          backBtn.classList.add('flex');
+        } else {
+          backBtn.classList.add('hidden');
+          backBtn.classList.remove('flex');
+        }
+      });
+      backBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+    })();
+  </script>
+  <!-- simple slider imitation via interactive dots not needed but we keep clean -->
+  <!-- additional style to ensure gradient text and smoothness -->
+</body>
+</html>

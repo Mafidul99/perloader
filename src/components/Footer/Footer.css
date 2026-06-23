@@ -1,0 +1,42 @@
+body { background: #fafcff; scroll-behavior: smooth; }
+    /* custom gradient background (purple-deep blue) used across sections */
+    .bg-grad-primary {
+      background: linear-gradient(135deg, #1e2b6e 0%, #141b4b 100%);
+    }
+    .bg-grad-soft {
+      background: linear-gradient(120deg, #f0f4ff 0%, #ffffff 100%);
+    }
+    .card-hover {
+      transition: all 0.25s ease-in-out;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+    }
+    .stats-card {
+      backdrop-filter: blur(2px);
+    }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+    .grad-border-bottom {
+      border-bottom: 3px solid transparent;
+      border-image: linear-gradient(90deg, #3b4b9b, #6c7ed6);
+      border-image-slice: 1;
+    }
+    .slider-btn {
+      transition: all 0.2s;
+    }
+    .slider-btn:hover {
+      background: #292c7b;
+      color: white;
+    }
+    /* custom scroll */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #eef2ff; }
+    ::-webkit-scrollbar-thumb { background: #2a3b8c; border-radius: 12px; }
