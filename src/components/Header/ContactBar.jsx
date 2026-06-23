@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Phone, Mail, IdCard, LogIn, User, X } from 'lucide-react';
 import {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+
+import mainlogo from '../../assets/SVG_website_logo.svg';
   
 
 const ContactBar = () => {
@@ -95,9 +97,9 @@ const ContactBar = () => {
 
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between w-full px-24 py-2 mx-auto bg-white shadow-md">
+      <div className="flex flex-wrap items-center justify-between w-full px-10 py-2 mx-auto shadow-md bg-slate-50 lg:px-24 md:px-10">
         <div className="flex items-center">
-          <img className="w-auto h-16" src="../../../SVG_website_logo.svg" alt="Shantishwar Logo" />
+          <img className="w-auto h-16" src={mainlogo} alt="Shantishwar Logo" />
         </div>
         
         <div className="hidden space-x-6 text-sm text-gray-700 md:flex">
@@ -162,7 +164,7 @@ const ContactBar = () => {
       {/* Login Modal */}
       {isLoginModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="relative w-full max-w-md p-6 bg-[#fff] rounded-lg shadow-xl dark:bg-gray-900">
+          <div className="relative w-full max-w-md p-6 rounded-lg shadow-xl bg-slate-50 dark:bg-gray-900">
             {/* Close button */}
             <button
               onClick={() => setIsLoginModalOpen(false)}
@@ -174,7 +176,7 @@ const ContactBar = () => {
             {/* Modal Header */}
             <div className="mb-6 text-center">
               <div className="flex justify-center mb-4">
-                <img className="w-auto h-12" src="../../../SVG_website_logo.svg" alt="Shantishwar Logo" />
+                <img className="w-auto h-12" src={mainlogo} alt="Shantishwar Logo" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-300">Welcome Back</h2>
               <p className="text-sm text-gray-600 dark:text-gray-300">Please login to your account</p>
@@ -263,7 +265,7 @@ const ContactBar = () => {
       {/* forgot Password */}
       {isForgotPasswordModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="relative w-full max-w-md p-6 bg-[#fff] rounded-lg shadow-xl dark:bg-gray-900">
+          <div className="relative w-full max-w-md p-6 rounded-lg shadow-xl bg-slate-50 dark:bg-gray-900">
             {/* Close button */}
             <button
               onClick={() => setIsForgotPasswordModalOpen(false)}
@@ -273,7 +275,7 @@ const ContactBar = () => {
               </button>
               <div className="mb-6 text-center">
                 <div className="flex justify-center mb-4">
-                  <img className="w-auto h-12" src="../../../SVG_website_logo.svg" alt="Shantishwar Logo" />
+                  <img className="w-auto h-12" src={mainlogo} alt="Shantishwar Logo" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-300">Forgot Password</h2>
                 <p className="text-sm text-gray-600 dark:text-gray-300">Enter your email to reset your password</p>
@@ -323,7 +325,7 @@ const ContactBar = () => {
       {/* Registration Modal */}
       {isRegistrationModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <div className="relative w-full max-w-md p-6 bg-[#fff] dark:bg-gray-900 rounded-lg shadow-xl">
+          <div className="relative w-full max-w-md p-6 rounded-lg shadow-xl bg-slate-50 dark:bg-gray-900">
             {/* Close button */}
             <button
               onClick={() => setIsRegistrationModalOpen(false)}
@@ -335,7 +337,7 @@ const ContactBar = () => {
             {/* Modal Header */}
             <div className="mb-6 text-center">
               <div className="flex justify-center mb-4">
-                <img className="w-auto h-12" src="../../../SVG_website_logo.svg" alt="Shantishwar Logo" />
+                <img className="w-auto h-12" src={mainlogo} alt="Shantishwar Logo" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Create Account</h2>
               <p className="text-sm text-gray-600 dark:text-gray-300">Join us today</p>
