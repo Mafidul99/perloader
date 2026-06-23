@@ -25,6 +25,8 @@ import {
   Play,
 } from "lucide-react";
 
+import qrCodeImage from "../../assets/qrcode.png";
+
 const MobileBanking = () => {
   const [showDownloadModal, setShowDownloadModal] = useState(false);
   const [showWatchDemo, setShowWatchDemo] = useState(false);
@@ -453,7 +455,8 @@ const MobileBanking = () => {
                 <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-gradient-to-br from-[#228296]/5 to-[#6f3c85]/5 dark:from-[#228296]/10 dark:to-[#6f3c85]/10 border border-gray-200 dark:border-gray-700">
                   <div className="relative">
                     <div className="p-4 bg-white shadow-lg dark:bg-gray-800 rounded-2xl">
-                      <QrCode size={120} className="text-[#228296]" />
+                      {/* <QrCode size={120} className="text-[#228296]" /> */}
+                      <img src={qrCodeImage} alt="QR Code" className="w-full h-full" />
                     </div>
                     <div className="absolute p-1 bg-green-500 rounded-full -top-2 -right-2">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
