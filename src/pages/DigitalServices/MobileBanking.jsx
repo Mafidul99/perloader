@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { 
-  Smartphone, 
-  Fingerprint, 
-  Shield, 
-  Zap, 
-  ArrowRight, 
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Smartphone,
+  Fingerprint,
+  Shield,
+  Zap,
+  ArrowRight,
   CheckCircle,
   QrCode,
   Send,
@@ -15,26 +15,110 @@ import {
   Apple,
   Coffee,
   Globe,
-  Lock
-} from 'lucide-react';
+  Lock,
+  X,
+  ChevronRight,
+  Star,
+  Users,
+  Clock,
+  Award,
+  Play,
+} from "lucide-react";
 
 const MobileBanking = () => {
-  const [showDemo, setShowDemo] = useState(false);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [showWatchDemo, setShowWatchDemo] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+  const modalRef = useRef(null);
+
+  // Handle escape key press
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape" && showDownloadModal) {
+        // eslint-disable-next-line react-hooks/immutability
+        handleCloseModal();
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [showDownloadModal]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (showDownloadModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showDownloadModal]);
+
+  const handleCloseModal = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowDownloadModal(false);
+      setIsClosing(false);
+    }, 300);
+  };
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleCloseModal();
+    }
+  };
 
   const features = [
-    { icon: <Fingerprint size={24} />, title: 'Biometric Login', desc: 'Secure access with fingerprint/face ID' },
-    { icon: <Send size={24} />, title: 'Instant Fund Transfer', desc: 'NEFT/RTGS/IMPS 24x7' },
-    { icon: <QrCode size={24} />, title: 'QR Payments', desc: 'Scan & pay at millions of stores' },
-    { icon: <Bell size={24} />, title: 'Smart Alerts', desc: 'Real-time transaction notifications' },
-    { icon: <CreditCard size={24} />, title: 'Card Management', desc: 'Block/unblock, set limits instantly' },
-    { icon: <RefreshCw size={24} />, title: 'Bill Payments', desc: 'Pay bills, recharge mobile/DTH' }
+    {
+      icon: <Fingerprint size={24} />,
+      title: "Biometric Login",
+      desc: "Secure access with fingerprint/face ID",
+    },
+    {
+      icon: <Send size={24} />,
+      title: "Instant Fund Transfer",
+      desc: "NEFT/RTGS/IMPS 24x7",
+    },
+    {
+      icon: <QrCode size={24} />,
+      title: "QR Payments",
+      desc: "Scan & pay at millions of stores",
+    },
+    {
+      icon: <Bell size={24} />,
+      title: "Smart Alerts",
+      desc: "Real-time transaction notifications",
+    },
+    {
+      icon: <CreditCard size={24} />,
+      title: "Card Management",
+      desc: "Block/unblock, set limits instantly",
+    },
+    {
+      icon: <RefreshCw size={24} />,
+      title: "Bill Payments",
+      desc: "Pay bills, recharge mobile/DTH",
+    },
   ];
 
   const steps = [
-    { step: '01', title: 'Download App', desc: 'Get from Google Play or App Store' },
-    { step: '02', title: 'Register', desc: 'Use your registered mobile number' },
-    { step: '03', title: 'Set MPIN', desc: 'Create secure 6-digit MPIN' },
-    { step: '04', title: 'Start Banking', desc: 'Enjoy seamless banking experience' }
+    {
+      step: "01",
+      title: "Download App",
+      desc: "Get from Google Play or App Store",
+    },
+    {
+      step: "02",
+      title: "Register",
+      desc: "Use your registered mobile number",
+    },
+    { step: "03", title: "Set MPIN", desc: "Create secure 6-digit MPIN" },
+    {
+      step: "04",
+      title: "Start Banking",
+      desc: "Enjoy seamless banking experience",
+    },
   ];
 
   return (
@@ -53,16 +137,19 @@ const MobileBanking = () => {
                 Mobile Banking
               </h1>
               <p className="mb-3 text-lg text-white/90">
-                Manage your money anytime, anywhere with our powerful mobile banking app. 
-                Secure, fast, and packed with features.
+                Manage your money anytime, anywhere with our powerful mobile
+                banking app. Secure, fast, and packed with features.
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-[#228296] transition-all bg-white rounded-lg hover:shadow-xl hover:scale-105">
+                <button
+                  onClick={() => setShowDownloadModal(true)}
+                  className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-[#228296] transition-all bg-white rounded-lg hover:shadow-xl hover:scale-105"
+                >
                   <Download size={18} />
                   Download App
                 </button>
-                <button 
-                  onClick={() => setShowDemo(!showDemo)}
+                <button
+                  onClick={() => setShowWatchDemo(true)}
                   className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-white transition-all border-2 border-white rounded-lg hover:bg-white/10"
                 >
                   Watch Demo
@@ -77,9 +164,15 @@ const MobileBanking = () => {
                       Welcome back, User!
                     </div>
                     <div className="mt-4 space-y-2">
-                      <div className="p-2 text-xs bg-gray-100 rounded">💰 Balance: ₹25,000</div>
-                      <div className="p-2 text-xs bg-gray-100 rounded">📱 Send Money</div>
-                      <div className="p-2 text-xs bg-gray-100 rounded">📊 View Statements</div>
+                      <div className="p-2 text-xs bg-gray-100 rounded">
+                        💰 Balance: ₹25,000
+                      </div>
+                      <div className="p-2 text-xs bg-gray-100 rounded">
+                        📱 Send Money
+                      </div>
+                      <div className="p-2 text-xs bg-gray-100 rounded">
+                        📊 View Statements
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -103,19 +196,29 @@ const MobileBanking = () => {
         {/* Features Grid */}
         <div className="mb-16">
           <div className="max-w-3xl mx-auto mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-800 dark:text-gray-300">Powerful {' '}
+            <h2 className="mb-4 text-3xl font-bold text-gray-800 dark:text-gray-300">
+              Powerful{" "}
               <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
                 Features
               </span>
-              </h2>
-            <p className="text-gray-600 dark:text-gray-400">Everything you need for modern banking in one app</p>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400">
+              Everything you need for modern banking in one app
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <div key={index} className="p-6 transition-all duration-300 rounded-lg shadow-lg dark:bg-gray-900 bg-slate-50 hover:shadow-xl hover:-translate-y-2">
+              <div
+                key={index}
+                className="p-6 transition-all duration-300 rounded-lg shadow-lg dark:bg-gray-900 bg-slate-50 hover:shadow-xl hover:-translate-y-2"
+              >
                 <div className="mb-4 text-[#228296]">{feature.icon}</div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{feature.desc}</p>
+                <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {feature.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -123,17 +226,21 @@ const MobileBanking = () => {
 
         {/* How to Get Started */}
         <div className="mb-16">
-          <h2 className="mb-12 text-3xl font-bold text-center text-gray-800 dark:text-gray-300">Get Started in 4 {' '}
-              <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
-                Easy Steps
-              </span></h2>
+          <h2 className="mb-12 text-3xl font-bold text-center text-gray-800 dark:text-gray-300">
+            Get Started in 4{" "}
+            <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
+              Easy Steps
+            </span>
+          </h2>
           <div className="grid gap-8 md:grid-cols-4">
             {steps.map((step, index) => (
               <div key={index} className="relative text-center">
                 <div className="w-16 h-16 mx-auto mb-4 text-2xl font-bold text-white bg-gradient-to-r from-[#228296] to-[#6f3c85] rounded-full flex items-center justify-center">
                   {step.step}
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">{step.title}</h3>
+                <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">
+                  {step.title}
+                </h3>
                 <p className="text-gray-600 dark:text-gray-400">{step.desc}</p>
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-[#228296] to-[#6f3c85]"></div>
@@ -148,24 +255,34 @@ const MobileBanking = () => {
           <div className="p-6 text-center rounded-lg bg-gradient-to-br from-blue-50 to-cyan-50">
             <Lock size={40} className="mx-auto mb-4 text-[#228296]" />
             <h3 className="mb-2 text-xl font-bold">Secure Banking</h3>
-            <p className="text-gray-600">256-bit encryption with multi-factor authentication</p>
+            <p className="text-gray-600">
+              256-bit encryption with multi-factor authentication
+            </p>
           </div>
           <div className="p-6 text-center rounded-lg bg-gradient-to-br from-purple-50 to-pink-50">
             <Zap size={40} className="mx-auto mb-4 text-[#6f3c85]" />
             <h3 className="mb-2 text-xl font-bold">Lightning Fast</h3>
-            <p className="text-gray-600">Instant payments and real-time updates</p>
+            <p className="text-gray-600">
+              Instant payments and real-time updates
+            </p>
           </div>
           <div className="p-6 text-center rounded-lg bg-gradient-to-br from-green-50 to-emerald-50">
             <Globe size={40} className="mx-auto mb-4 text-[#228296]" />
             <h3 className="mb-2 text-xl font-bold">24/7 Access</h3>
-            <p className="text-gray-600">Bank anytime from anywhere in the world</p>
+            <p className="text-gray-600">
+              Bank anytime from anywhere in the world
+            </p>
           </div>
         </div>
 
         {/* App Download Section */}
         <div className="p-8 text-center bg-white rounded-lg shadow-xl">
-          <h2 className="mb-4 text-2xl font-bold text-gray-800">Download Our Mobile App</h2>
-          <p className="mb-6 text-gray-600">Available on both iOS and Android platforms</p>
+          <h2 className="mb-4 text-2xl font-bold text-gray-800">
+            Download Our Mobile App
+          </h2>
+          <p className="mb-6 text-gray-600">
+            Available on both iOS and Android platforms
+          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button className="flex items-center gap-3 px-6 py-3 text-white transition-all bg-black rounded-lg hover:scale-105">
               <Apple size={24} />
@@ -184,6 +301,207 @@ const MobileBanking = () => {
           </div>
         </div>
       </div>
+
+      {/* Download Modal - Updated with better UI and functionality */}
+      {showDownloadModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          onClick={handleOverlayClick}
+        >
+          <div
+            ref={modalRef}
+            className={`relative w-full max-w-4xl bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 ${
+              isClosing ? "scale-95 opacity-0" : "scale-100 opacity-100"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={handleCloseModal}
+              className="absolute z-10 p-2 text-gray-500 transition-all rounded-full right-4 top-4 hover:bg-gray-100 hover:text-gray-900 hover:scale-110 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+              aria-label="Close download modal"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Gradient Header */}
+            <div className="relative bg-gradient-to-r from-[#228296] to-[#6f3c85] p-8 md:p-10">
+              <div className="flex items-start gap-4 md:gap-6">
+                <div className="flex-shrink-0 p-4 bg-white/20 backdrop-blur-sm rounded-2xl">
+                  <Download size={32} className="text-white" />
+                </div>
+                <div className="flex-1 text-white">
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] opacity-80">
+                    Mobile Banking App
+                  </p>
+                  <h2 className="mt-1 text-2xl font-bold md:text-3xl">
+                    Download the App
+                  </h2>
+                  <p className="mt-1 text-white/90">
+                    Get instant access to your account anytime, anywhere
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 md:p-8 dark:bg-gray-900 bg-slate-50">
+              <div className="grid gap-8 md:grid-cols-[1.5fr_1fr]">
+                {/* Left Column - App Info & Download Buttons */}
+                <div className="space-y-6">
+                  {/* Rating & Stats */}
+                  <div className="flex flex-wrap items-center gap-6">
+                    <div className="flex items-center gap-2">
+                      <div className="flex text-yellow-400">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={18} fill="currentColor" />
+                        ))}
+                      </div>
+                      <span className="font-semibold text-gray-700 dark:text-gray-300">
+                        4.8
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                      <Users size={18} />
+                      <span>2M+ Downloads</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                      <Award size={18} />
+                      <span>Editor's Choice</span>
+                    </div>
+                  </div>
+
+                  {/* Key Features */}
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-gray-800 dark:text-gray-200">
+                      What's included:
+                    </h4>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {[
+                        "Biometric Login",
+                        "Instant Transfers",
+                        "QR Payments",
+                        "Smart Alerts",
+                        "Card Management",
+                        "Bill Payments",
+                        "Investment Options",
+                        "Loan Services",
+                      ].map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
+                        >
+                          <CheckCircle
+                            size={16}
+                            className="text-[#228296] flex-shrink-0"
+                          />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Download Buttons */}
+                  <div className="space-y-3">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Download now for free
+                    </p>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-6 py-3 text-white transition-all bg-black rounded-xl hover:scale-105 hover:shadow-xl group"
+                      >
+                        <Apple size={24} />
+                        <div className="text-left">
+                          <div className="text-xs opacity-80">
+                            Download on the
+                          </div>
+                          <div className="text-base font-semibold">
+                            App Store
+                          </div>
+                        </div>
+                        <ChevronRight
+                          size={20}
+                          className="transition-opacity opacity-0 group-hover:opacity-100"
+                        />
+                      </a>
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-6 py-3 text-white transition-all bg-black rounded-xl hover:scale-105 hover:shadow-xl group"
+                      >
+                        <Smartphone size={24} />
+                        <div className="text-left">
+                          <div className="text-xs opacity-80">Get it on</div>
+                          <div className="text-base font-semibold">
+                            Google Play
+                          </div>
+                        </div>
+                        <ChevronRight
+                          size={20}
+                          className="transition-opacity opacity-0 group-hover:opacity-100"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - QR Code */}
+                <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-gradient-to-br from-[#228296]/5 to-[#6f3c85]/5 dark:from-[#228296]/10 dark:to-[#6f3c85]/10 border border-gray-200 dark:border-gray-700">
+                  <div className="relative">
+                    <div className="p-4 bg-white shadow-lg dark:bg-gray-800 rounded-2xl">
+                      <QrCode size={120} className="text-[#228296]" />
+                    </div>
+                    <div className="absolute p-1 bg-green-500 rounded-full -top-2 -right-2">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                  <p className="mt-4 font-medium text-gray-800 dark:text-gray-200">
+                    Scan to Download
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 text-center max-w-[200px]">
+                    Use your phone's camera to scan the QR code
+                  </p>
+                  <div className="flex items-center gap-2 mt-3 text-xs text-gray-500 dark:text-gray-400">
+                    <Clock size={14} />
+                    <span>QR code expires in 5:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* showWatchDemo */}
+      {showWatchDemo &&(
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="relative w-full max-w-4xl p-6 bg-white shadow-2xl rounded-3xl dark:bg-gray-900">
+            <button
+              onClick={() => setShowWatchDemo(false)}
+              className="absolute z-10 p-2 text-gray-500 transition-all rounded-full right-4 top-4 hover:bg-gray-100 hover:text-gray-900 hover:scale-110 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+              aria-label="Close demo modal"
+            >
+              <X size={24} />
+            </button>
+            <div className="relative w-full overflow-hidden bg-black rounded-lg aspect-video">
+              <iframe
+                title="App demo"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      
     </div>
   );
 };
