@@ -49,7 +49,7 @@ const Preloader = ({ onLoadingComplete }) => {
                 <img 
                   src={logoImage} 
                   alt="Nebula Logo" 
-                  className="relative w-20 h-20 md:w-32 md:h-32 animate-float-bounce drop-shadow-2xl"
+                  className="relative w-24 h-24 md:w-32 md:h-32 animate-float-bounce drop-shadow-2xl"
                   onError={(e) => { 
                     e.target.src = 'https://via.placeholder.com/128?text=Logo'; 
                   }}
