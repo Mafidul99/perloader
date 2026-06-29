@@ -43,10 +43,12 @@ const [darkMode, setDarkMode] = useState(false);
     <div className="w-full px-5 py-1 overflow-hidden shadow-md bg-gradient-to-r from-sky-900 to-cyan-800 shadow-cyan-800/50">
       <div className="flex animate-marquee whitespace-nowrap">
         <marquee className="flex px-4 space-x-2">
-        <span className="text-sm font-medium text-white">Welcome to Our Bank - Your Trusted Financial Partner! &nbsp; |</span>
-        <span className="text-sm font-medium text-white">Experience Seamless Banking with Us! &nbsp; |</span>
+        <span className="text-sm font-medium text-white">Welcome to Our Society - Your Trusted Financial Partner! &nbsp; |</span>
+        <span className="text-sm font-medium text-white">Join Our Community and Unlock Your Financial Potential! &nbsp; |</span>
+        <span className="text-sm font-medium text-white">Empowering Your Financial Journey with Our Society! &nbsp; |</span>
+        <span className="text-sm font-medium text-white">Experience Seamless Society with Us! &nbsp; |</span>
         <span className="text-sm font-medium text-white">Your Financial Success Starts Here! &nbsp; |</span>
-        <span className="text-sm font-medium text-white">Discover the Future of Banking with Us! </span>
+        <span className="text-sm font-medium text-white">Discover the Future of Society with Us! </span>
         </marquee>
       </div>
     </div>
