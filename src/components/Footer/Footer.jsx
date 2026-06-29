@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   // eslint-disable-next-line no-undef
-  const bankName = process.env.VITE_APP_WEB_TITLE || 'NCOSL';
+  const bankName = process.env.VITE_APP_WEB_TITLE || 'NCCSL';
 
   return (
     <footer className="text-white bg-gray-900">
