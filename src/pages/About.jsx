@@ -2,6 +2,8 @@
 import React from 'react';
 import { Shield, Clock, Users, Award } from 'lucide-react';
 
+import giftLogo from '../assets/Revenue.svg'; // Ensure you have a gift logo image in your assets folder
+
 const features = [
   {
     icon: Clock,
@@ -57,7 +59,7 @@ const AboutSection = () => {
           {/* Right Image */}
           <div className="lg:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop"
+              src={giftLogo}
               alt="About Us"
               className="object-cover w-full shadow-2xl rounded-2xl"
             />
