@@ -57,7 +57,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right Image */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 bg-inherit">
             <img
               src={giftLogo}
               alt="About Us"
