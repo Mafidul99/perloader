@@ -4,11 +4,9 @@ import InfoCards from './Hero/InfoCards'
 import About from './About'
 import FinancialPosition from './FinancialPosition/FinancialPosition'
 import Services from './Services/Services'
-import Counter from './Services/Counter'
 import Statistics from './Services/Statistics'
+import LiveChart from '../components/LiveChart'
 // import Contact from './Contact'
-import Navigation from '../components/Header/ThemeToggle'
-
 
 export const Home = () => {
   return (
@@ -19,6 +17,7 @@ export const Home = () => {
       <About />
       <Statistics />
       <FinancialPosition />
+      <LiveChart />
       <Services />
       {/* <Contact /> */}
     </div>

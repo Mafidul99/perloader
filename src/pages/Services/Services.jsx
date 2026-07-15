@@ -11,6 +11,9 @@ import {
   CreditCard,
 } from 'lucide-react';
 
+
+// import iconSvg from '../../assets/icon/bank-deposit.svg';
+
 const services = [
   {
     title: 'Savings Account',
@@ -96,7 +99,11 @@ const Services = () => {
               <div
                 className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
               >
-                <service.icon className="text-white" size={32} />
+                {typeof service.icon === 'string' ? (
+                  <img src={service.icon} alt={service.title} className="object-contain w-8 h-8 text-white" />
+                ) : (
+                  <service.icon className="text-white" size={32} />
+                )}
               </div>
               <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">
                 {service.title}
