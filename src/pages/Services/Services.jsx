@@ -11,13 +11,11 @@ import {
   CreditCard,
 } from 'lucide-react';
 
-import depoIcon from '../../assets/icon/bank-deposit.svg';
-
 const services = [
   {
     title: 'Savings Account',
     description: 'Secure savings with competitive interest rates',
-    icon: {depoIcon},
+    icon: PiggyBank,
     link: '/savings-account',
     gradient: 'from-[#228296] to-[#228296]/80',
   },
