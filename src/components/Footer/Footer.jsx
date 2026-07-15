@@ -77,8 +77,8 @@ const Footer = () => {
     window.open(social.href, '_blank', 'noopener,noreferrer');
   };
 
-  // eslint-disable-next-line no-undef
-  const bankNameIcon = process.env.VITE_APP_WEB_TITLE || 'NTCCSL';
+ 
+  const bankNameIcon = import.meta.env.VITE_APP_WEB_TITLE || 'NTCCSL';
 
   return (
     <footer className="text-white bg-gray-900">
