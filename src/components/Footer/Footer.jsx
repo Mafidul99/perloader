@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   // eslint-disable-next-line no-undef
-  const bankName = process.env.VITE_APP_WEB_TITLE || 'NTCCSL';
+  const bankNameIcon = process.env.VITE_APP_WEB_TITLE || 'NTCCSL';
 
   return (
     <footer className="text-white bg-gray-900">
@@ -89,10 +89,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4 space-x-2">
               <div className="flex items-center justify-center">
-                <img src={FooterLogo} alt={bankName} className="w-12 h-12 rounded-full" />
+                <img src={FooterLogo} alt={bankNameIcon} className="w-12 h-12 rounded-full" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
-                {bankName}
+                {bankNameIcon}
               </span>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-gray-400">
