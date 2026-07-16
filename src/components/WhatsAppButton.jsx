@@ -26,7 +26,7 @@ const WhatsAppButton = () => {
   return (
     <div ref={menuRef} className="fixed bottom-6 left-6 z-[1000] flex flex-col items-start gap-3">
       {isOpen && (
-        <div className="p-4 bg-white border border-gray-200 shadow-2xl w-72 rounded-2xl dark:border-gray-700 dark:bg-gray-900">
+        <div className="p-4 border border-gray-200 shadow-2xl bg-slate-50 w-72 rounded-2xl dark:border-gray-700 dark:bg-gray-900">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white">
               <Sparkles size={18} />
