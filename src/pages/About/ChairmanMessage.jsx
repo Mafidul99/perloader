@@ -4,6 +4,7 @@ import imageMessage from '../../assets/icon/Confetti.svg';
 
 const ChairmanMessage = () => {
   const ChairmanMessage = import.meta.env.VITE_APP_WEB_TITLE || "NTCCSL";
+  const Fullname = import.meta.env.VITE_APP_FULL_NAME || 'Nofino Thrift & Credit Cooperative Society Ltd.';
   return (
     <>
     <section className="py-16 overflow-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 ">
@@ -145,7 +146,7 @@ const ChairmanMessage = () => {
                     Chairman & Managing Director
                   </div>
                   <div className="text-xs text-gray-400 dark:text-gray-400">
-                    {ChairmanMessage}
+                    {Fullname}
                   </div>
                 </div>
                 

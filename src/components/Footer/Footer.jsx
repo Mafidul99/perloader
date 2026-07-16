@@ -79,6 +79,7 @@ const Footer = () => {
 
  
   const bankNameIcon = import.meta.env.VITE_APP_WEB_TITLE || 'NTCCSL';
+  const Fullname = import.meta.env.VITE_APP_FULL_NAME || 'Nofino Thrift & Credit Cooperative Society Ltd.';
 
   return (
     <footer className="text-white bg-gray-900">
@@ -244,7 +245,7 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="text-center md:text-left">
               <p className="text-sm text-gray-400">
-                © {currentYear} Nofino Thrift & Credit Co-Operative Society Ltd. All Rights Reserved.
+                © {currentYear} {Fullname} All Rights Reserved.
               </p>
               <p className="mt-1 text-xs text-gray-500">
                 Powered by Nofino Rural Finance Pvt. Ltd.
