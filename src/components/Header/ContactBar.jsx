@@ -95,7 +95,6 @@ const ContactBar = () => {
     });
   };
 
-  const MainLogoWeb = import.meta.env.VITE_APP_LOGO_URL || './src/assets/SVG_website_logo.svg';
 
   return (
     <>
