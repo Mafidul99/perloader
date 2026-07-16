@@ -3,6 +3,7 @@ import { Quote, Award, Target, Users, Shield, Clock, ChevronRight } from 'lucide
 import imageMessage from '../../assets/icon/Confetti.svg';
 
 const ChairmanMessage = () => {
+  const ChairmanMessage = import.meta.env.VITE_APP_WEB_TITLE || "NTCCSL";
   return (
     <>
     <section className="py-16 overflow-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 ">
@@ -44,7 +45,7 @@ const ChairmanMessage = () => {
                   <div className="text-center text-white">
                     <Users size={48} className="mx-auto mb-2" />
                     <p className="text-lg font-semibold">Chairman Photo</p>
-                    <p className="text-sm">Shantishwar Bank</p>
+                    <p className="text-sm">{ChairmanMessage}</p>
                   </div>
                 </div>
               </div>
@@ -144,7 +145,7 @@ const ChairmanMessage = () => {
                     Chairman & Managing Director
                   </div>
                   <div className="text-xs text-gray-400 dark:text-gray-400">
-                    Shantishwar Bank Ltd.
+                    {ChairmanMessage}
                   </div>
                 </div>
                 
