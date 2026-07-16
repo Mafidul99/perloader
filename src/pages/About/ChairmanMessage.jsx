@@ -1,6 +1,6 @@
 import React from 'react';
 import { Quote, Award, Target, Users, Shield, Clock, ChevronRight } from 'lucide-react';
-import imageMessage from '../../assets/OQPX091.png';
+import imageMessage from '../../assets/icon/Confetti.svg';
 
 const ChairmanMessage = () => {
   return (
