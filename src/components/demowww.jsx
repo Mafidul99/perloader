@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { MessageCircle, Mail, Phone, Bot, Send, X, Minimize2, Maximize2, ChevronDown, ChevronUp, Paintbrush } from 'lucide-react';
+import { MessageCircle, Mail, Phone, Bot, Send, X, Minimize2, Maximize2, ChevronDown, ChevronUp } from 'lucide-react';
 import robotIconSvg from '../../src/assets/icon/Live chatbot.svg';
 
 const quickReplies = [
@@ -167,13 +167,12 @@ const WhatsAppButton = () => {
           {/* Header */}
           <div className="flex items-center justify-between bg-gradient-to-r from-[#228296] to-[#6f3c85] px-4 py-3.5 text-white">
             <div className="flex items-center gap-3">
-              <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-950/60 backdrop-blur-sm">
-              <img 
-                src="../../public/OQPX091.png"
-                alt="WhatsApp Icon"
-                className="object-contain w-full h-full"
-              />
-                {/* <Bot size={20} className="text-white" /> */}
+              <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-950/50 backdrop-blur-sm">
+                <img 
+                  src="../../public/OQPX091.png"
+                  alt="WhatsApp Icon"
+                  className="object-contain w-full h-full"
+                />
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
               </div>
               <div>
@@ -192,7 +191,7 @@ const WhatsAppButton = () => {
                 aria-label="Clear chat"
                 title="Clear chat"
               >
-                <Paintbrush size={16} />
+                ✕
               </button>
               <button 
                 type="button" 
