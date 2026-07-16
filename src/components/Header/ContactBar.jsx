@@ -178,7 +178,7 @@ const ContactBar = () => {
             {/* Modal Header */}
             <div className="mb-6 text-center">
               <div className="flex justify-center mb-4">
-                <img className="w-auto h-12" src={mainlogo} alt="Shantishwar Logo" />
+                <img className="w-auto h-12" src={MainLogoWeb} alt="Shantishwar Logo" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-300">Welcome Back</h2>
               <p className="text-sm text-gray-600 dark:text-gray-300">Please login to your account</p>
@@ -277,7 +277,7 @@ const ContactBar = () => {
               </button>
               <div className="mb-6 text-center">
                 <div className="flex justify-center mb-4">
-                  <img className="w-auto h-12" src={mainlogo} alt="Shantishwar Logo" />
+                  <img className="w-auto h-12" src={MainLogoWeb} alt="Shantishwar Logo" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-300">Forgot Password</h2>
                 <p className="text-sm text-gray-600 dark:text-gray-300">Enter your email to reset your password</p>
@@ -339,7 +339,7 @@ const ContactBar = () => {
             {/* Modal Header */}
             <div className="mb-6 text-center">
               <div className="flex justify-center mb-4">
-                <img className="w-auto h-12" src={mainlogo} alt="Shantishwar Logo" />
+                <img className="w-auto h-12" src={MainLogoWeb} alt="Shantishwar Logo" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200">Create Account</h2>
               <p className="text-sm text-gray-600 dark:text-gray-300">Join us today</p>
