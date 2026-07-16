@@ -3,7 +3,7 @@ import { Phone, Mail, IdCard, LogIn, User, X } from 'lucide-react';
 import {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-import mainlogo from '../../assets/SVG_website_logo.svg';
+import MainLogoWeb from '../../assets/SVG_website_logo.svg';
   
 
 const ContactBar = () => {
@@ -95,13 +95,13 @@ const ContactBar = () => {
     });
   };
 
-  const MainLogoWeb = import.meta.env.VITE_APP_LOGO_URL || mainlogo;
+  const MainLogoWeb = import.meta.env.VITE_APP_LOGO_URL || './src/assets/SVG_website_logo.svg';
 
   return (
     <>
       <div className="flex flex-wrap items-center justify-between w-full px-10 py-2 mx-auto shadow-md bg-slate-50 lg:px-24 md:px-10">
         <div className="flex items-center">
-          <img className="w-auto h-16" src={MainLogoWeb} alt="Shantishwar Logo" />
+          <img className="w-auto h-16" src={MainLogoWeb} alt="Main Logo" />
         </div>
         
         <div className="hidden space-x-6 text-sm text-gray-700 md:flex">
@@ -178,7 +178,7 @@ const ContactBar = () => {
             {/* Modal Header */}
             <div className="mb-6 text-center">
               <div className="flex justify-center mb-4">
-                <img className="w-auto h-12" src={MainLogoWeb} alt="Shantishwar Logo" />
+                <img className="w-auto h-12" src={MainLogoWeb} alt="Main Logo" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-300">Welcome Back</h2>
               <p className="text-sm text-gray-600 dark:text-gray-300">Please login to your account</p>
