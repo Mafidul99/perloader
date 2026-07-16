@@ -169,7 +169,7 @@ const WhatsAppButton = () => {
             <div className="flex items-center gap-3">
               <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-950/60 backdrop-blur-sm">
               <img 
-                src="../../public/OQPX091.png"
+                src="../../OQPX091.png"
                 alt="WhatsApp Icon"
                 className="object-contain w-full h-full"
               />
