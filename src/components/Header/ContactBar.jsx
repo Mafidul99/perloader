@@ -95,11 +95,13 @@ const ContactBar = () => {
     });
   };
 
+  const MainLogoWeb = import.meta.env.VITE_APP_LOGO_URL || mainlogo;
+
   return (
     <>
       <div className="flex flex-wrap items-center justify-between w-full px-10 py-2 mx-auto shadow-md bg-slate-50 lg:px-24 md:px-10">
         <div className="flex items-center">
-          <img className="w-auto h-16" src={mainlogo} alt="Shantishwar Logo" />
+          <img className="w-auto h-16" src={MainLogoWeb} alt="Shantishwar Logo" />
         </div>
         
         <div className="hidden space-x-6 text-sm text-gray-700 md:flex">
