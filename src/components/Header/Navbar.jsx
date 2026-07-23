@@ -54,7 +54,13 @@ const Navbar = () => {
         { name: 'RD Interest Rate', href: 'recurring-deposit' },
       ],
     },
-    { name: 'Maturity Projection', href: 'maturity-projection' },
+    { name: 'Maturity Projection', submenu: true, submenuLinks: [
+        { name: 'Maturity', href: 'maturity-projection' },
+        { name: 'Daily', href: 'daily-account' },
+        { name: 'Weekly', href: 'weekly-account' },
+        { name: 'Monthly', href: 'monthly-account' },
+      ] },
+    
     { name: 'Contact', href: 'contact' },
   ];
 

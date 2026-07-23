@@ -30,6 +30,9 @@ import RDInterestRate from "./pages/Deposit/RDInterestRate";
 import NRIServices from "./pages/NRIServices/NRIServices";
 import AboutUs from "./pages/About/AboutUs";
 import Accounts from "./pages/Accounts/Accounts";
+import DailyAccount from "./pages/Accounts/DailyAccount";
+import WeeklyAccount from "./pages/Accounts/WeeklyAccount";
+import MonthlyAccount from "./pages/Accounts/MonthlyAccount";
 import Loans from "./pages/Loans/Loans";
 import DigitalServices from "./pages/DigitalServices/DigitalServices";
 import Schemes from "./pages/Schemes/Schemes";
@@ -97,6 +100,9 @@ function App() {
           <Route path="fixed-Interest" element={<FDInterestRates />} />
           <Route path="recurring-deposit" element={<RDInterestRate />} />
           <Route path="nri-services" element={<NRIServices />} />
+          <Route path="daily-account" element={<DailyAccount />} />
+          <Route path="weekly-account" element={<WeeklyAccount />} />
+          <Route path="monthly-account" element={<MonthlyAccount />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsConditions />} />
