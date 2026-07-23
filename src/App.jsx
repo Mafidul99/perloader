@@ -46,6 +46,7 @@ import BankHolidays from "./pages/FooterPages/BankHolidays";
 import BranchesAtms from "./pages/FooterPages/BranchesAtms";
 import SupportTicket from "./pages/SupportTicket";
 import Services from "./pages/Services/Services";
+import MaturityProjection from "./pages/MaturityProjection";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -102,6 +103,7 @@ function App() {
           <Route path="sitemap" element={<Sitemap />} />
           <Route path="faqs" element={<FAQ />} />
           <Route path="support-ticket" element={<SupportTicket />} />
+          <Route path="maturity-projection" element={<MaturityProjection />} />
           <Route path="reviews" element={<CustomerReviews />} />
           <Route path="careers" element={<Careers />} />
           <Route path="ifsc-codes" element={<IFSCCode />} />

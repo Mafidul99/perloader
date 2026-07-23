@@ -6,6 +6,7 @@ import FinancialPosition from './FinancialPosition/FinancialPosition'
 import Services from './Services/Services'
 import Statistics from './Services/Statistics'
 import LiveChart from '../components/LiveChart'
+import MaturityProjection from './MaturityProjection'
 // import Contact from './Contact'
 
 export const Home = () => {
@@ -18,6 +19,7 @@ export const Home = () => {
       <Statistics />
       <FinancialPosition />
       <LiveChart />
+      <MaturityProjection />
       <Services />
       {/* <Contact /> */}
     </div>
