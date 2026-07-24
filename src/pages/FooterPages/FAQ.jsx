@@ -192,10 +192,10 @@ const FAQ = () => {
           <h3 className="mb-2 text-xl font-bold text-gray-800">Still have questions?</h3>
           <p className="mb-6 text-gray-600">We're here to help you 24/7</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+917767006627" className="inline-flex items-center gap-2 px-6 py-2 bg-[#228296] text-white rounded-lg hover:bg-[#1a6b7c] transition">
+            <a href="tel:+916002562417" className="inline-flex items-center gap-2 px-6 py-2 bg-[#228296] text-white rounded-lg hover:bg-[#1a6b7c] transition">
               <Phone size={18} /> Call Support
             </a>
-            <a href="mailto:support@ncosl.com" className="inline-flex items-center gap-2 px-6 py-2 border border-[#228296] text-[#228296] rounded-lg hover:bg-[#228296] hover:text-white transition">
+            <a href="mailto:support@ntccsl.com" className="inline-flex items-center gap-2 px-6 py-2 border border-[#228296] text-[#228296] rounded-lg hover:bg-[#228296] hover:text-white transition">
               <Mail size={18} /> Email Us
             </a>
           </div>

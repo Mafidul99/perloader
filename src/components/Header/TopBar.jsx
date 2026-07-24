@@ -708,8 +708,8 @@ const TopBar = () => {
                 <FaPhone className="text-[#228296]" size={20} />
                 <h4 className="font-semibold text-gray-800 dark:text-gray-200">Call Us</h4>
               </div>
-              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">+91 1234 567 890</p>
-              <p className="mt-1 text-xs text-gray-600 dark:text-gray-300">Toll Free: 1800-BANK-123</p>
+              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">+91 6002562417</p>
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-300">Toll Free: 1800 123 4567</p>
             </div>
 
             {/* Email */}
@@ -718,7 +718,7 @@ const TopBar = () => {
                 <FaEnvelope className="text-[#228296]" size={20} />
                 <h4 className="font-semibold text-gray-800 dark:text-gray-200">Email Us</h4>
               </div>
-              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">support@bank.com</p>
+              <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">support@ntccsl.com</p>
               <p className="mt-1 text-xs text-gray-600 dark:text-gray-300">Response time: 24 hours</p>
             </div>
 

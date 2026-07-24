@@ -348,26 +348,26 @@ const SupportTicket = () => {
               </div>
               <div className="space-y-3">
                 <a
-                  href="tel:+917767006627"
+                  href="tel:+916002562417"
                   className="flex items-center gap-3 p-3 transition bg-slate-100 dark:bg-gray-900 rounded-xl hover:shadow-md"
                 >
                   <Phone size={20} className="text-[#6f3c85]" />
                   <div>
                     <p className="text-xs text-slate-500">Call Us Now</p>
                     <p className="font-semibold text-slate-800 dark:text-white">
-                      +91 7767006627
+                      +91 6002562417
                     </p>
                   </div>
                 </a>
                 <a
-                  href="mailto:support@ncosl.com"
+                  href="mailto:support@ntccsl.com"
                   className="flex items-center gap-3 p-3 transition bg-slate-100 dark:bg-gray-900 rounded-xl hover:shadow-md"
                 >
                   <Mail size={20} className="text-[#228296]" />
                   <div>
                     <p className="text-xs text-slate-500">Email Support</p>
                     <p className="font-semibold text-slate-800 dark:text-white">
-                      support@ncosl.com
+                      support@ntccsl.com
                     </p>
                   </div>
                 </a>

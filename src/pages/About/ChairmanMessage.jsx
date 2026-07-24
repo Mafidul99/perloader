@@ -140,7 +140,7 @@ const ChairmanMessage = () => {
               <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
                 <div className="mb-4 sm:mb-0">
                   <div className="mb-2 font-serif text-2xl text-gray-800 dark:text-white">
-                    Shri. Shantishwar Patil
+                    Shri. Mafidul Islam
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-300">
                     Chairman & Managing Director

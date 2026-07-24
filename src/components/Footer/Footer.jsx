@@ -202,22 +202,22 @@ const Footer = () => {
               <div className="flex items-center space-x-3 group">
                 <Phone size={18} className="text-[#6f3c85] group-hover:scale-110 transition-transform" />
                 <div>
-                  <a href="tel:+917767006627" className="block text-sm text-gray-400 transition hover:text-white">
-                    +91 7767006627
+                  <a href="tel:+916002562417" className="block text-sm text-gray-400 transition hover:text-white">
+                    +91 6002562417
                   </a>
-                  <a href="tel:+912402345678" className="text-sm text-gray-400 transition hover:text-white">
-                    +91 240 2345678
+                  <a href="tel:+9118001234567" className="text-sm text-gray-400 transition hover:text-white">
+                    +91 1800 123 4567
                   </a>
                 </div>
               </div>
               <div className="flex items-center space-x-3 group">
                 <Mail size={18} className="text-[#228296] group-hover:scale-110 transition-transform" />
                 <div>
-                  <a href="mailto:info@ncosl.com" className="block text-sm text-gray-400 transition hover:text-white">
-                    info@ncosl.com
+                  <a href="mailto:info@ntccsl.com" className="block text-sm text-gray-400 transition hover:text-white">
+                    info@ntccsl.com
                   </a>
-                  <a href="mailto:support@ncosl.com" className="text-xs text-gray-400 transition hover:text-white">
-                    support@ncosl.com
+                  <a href="mailto:support@ntccsl.com" className="text-xs text-gray-400 transition hover:text-white">
+                    support@ntccsl.com
                   </a>
                 </div>
               </div>
