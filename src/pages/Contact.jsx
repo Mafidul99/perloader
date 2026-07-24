@@ -83,8 +83,8 @@ const Contact = () => {
       title: 'Phone Numbers',
       details: [
         { label: 'Toll Free', value: '1800 123 4567', href: 'tel:18001234567' },
-        { label: 'Support', value: '+91 7767006627', href: 'tel:+917767006627' },
-        { label: 'WhatsApp', value: '+91 9876543210', href: 'https://wa.me/919876543210' }
+        { label: 'Support', value: '+91 6002561417', href: 'tel:+916002561417' },
+        { label: 'WhatsApp', value: '+91 7002079156', href: 'https://wa.me/917002079156' }
       ],
       color: 'from-blue-500 to-cyan-500'
     },
@@ -92,9 +92,9 @@ const Contact = () => {
       icon: <Mail size={24} />,
       title: 'Email Addresses',
       details: [
-        { label: 'General Inquiries', value: 'info@shantishwar.com', href: 'mailto:info@shantishwar.com' },
-        { label: 'Support', value: 'support@shantishwar.com', href: 'mailto:support@shantishwar.com' },
-        { label: 'Complaints', value: 'complaints@shantishwar.com', href: 'mailto:complaints@shantishwar.com' }
+        { label: 'General Inquiries', value: 'info@ntccsl.com', href: 'mailto:info@ntccsl.com' },
+        { label: 'Support', value: 'support@ntccsl.com', href: 'mailto:support@ntccsl.com' },
+        { label: 'Complaints', value: 'complaints@ntccsl.com', href: 'mailto:complaints@ntccsl.com' }
       ],
       color: 'from-purple-500 to-pink-500'
     },

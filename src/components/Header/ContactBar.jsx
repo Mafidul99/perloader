@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Phone, Mail, IdCard, LogIn, User, X } from 'lucide-react';
 import {toast} from 'react-toastify';
@@ -50,6 +51,7 @@ const ContactBar = () => {
     }
     navigate('/');
   };
+
 
   const handleLogout = () => {
     setIsLoggedIn(false);
@@ -106,24 +108,36 @@ const ContactBar = () => {
         <div className="hidden space-x-6 text-sm text-gray-700 md:flex">
           <div className="flex items-center gap-2">
             <Phone size={16} className="text-[#228296]" />
-            <a href="tel:+917767006627" className="hover:text-[#6f3c85] transition-colors">
-              +91 7767006627
+            <a href="tel:+9118001234567" className="hover:text-[#6f3c85] transition-colors">
+              +91 1800 123 4567
             </a>
           </div>
           <div className="flex items-center gap-2">
             <Mail size={16} className="text-[#228296]" />
-            <a href="mailto:info@shantishwar.com" className="hover:text-[#6f3c85] transition-colors">
-              info@shantishwar.com
+            <a href="mailto:info@ntccsl.com" className="hover:text-[#6f3c85] transition-colors">
+              info@ntccsl.com
             </a>
           </div>
           <div className="flex items-center gap-2">
             <IdCard size={16} className="text-[#228296]" />
-            <span>Reg No: MSCS/CR/1521/2024</span>
+            <span>Reg No: NTCCSL/CR/1098/2026</span>
           </div>
         </div>
 
+        {/* Login Button */}
+        <div className="flex items-center ml-4">
+          <a href="/login" target="_blank" rel="noopener noreferrer">
+            <button
+                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-105"
+              >
+                <LogIn size={16} />
+              <span>Login</span>
+            </button>
+          </a>
+        </div>
+
         {/* Login/User Button */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           {!isLoggedIn ? (
             <button
               onClick={() => setIsLoginModalOpen(true)}
@@ -138,7 +152,7 @@ const ContactBar = () => {
                 <User size={16} />
                 <span>My Account</span>
               </button>
-              {/* Dropdown menu for logged-in user */}
+              
               <div className="absolute right-0 hidden w-48 mt-2 bg-white rounded-md shadow-lg group-hover:block">
                 <a href="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Dashboard
@@ -159,7 +173,8 @@ const ContactBar = () => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
+        
       </div>
 
       {/* Login Modal */}
