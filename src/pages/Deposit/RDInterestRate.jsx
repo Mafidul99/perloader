@@ -160,12 +160,12 @@ const RDInterestRate = () => {
       <div className="container px-4 py-8 mx-auto">
         {/* RD Calculator */}
         <div className="mb-12 overflow-hidden rounded-lg shadow-xl dark:bg-gray-900 bg-slate-50">
-          <div className="p-6 border-b bg-gradient-to-r from-purple-50 to-blue-50">
+          <div className="p-6 border-b bg-gradient-to-r from-purple-50 to-blue-50 dark:from-slate-900 dark:to-slate-900">
             <div className="flex items-center gap-3">
               <Calculator className="text-[#6f3c85]" size={28} />
-              <h2 className="text-2xl font-bold text-gray-800">RD Interest Calculator</h2>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">RD Interest Calculator</h2>
             </div>
-            <p className="mt-1 text-gray-600">Calculate your RD maturity amount instantly</p>
+            <p className="mt-1 text-gray-600 dark:text-gray-400">Calculate your RD maturity amount instantly</p>
           </div>
           
           <div className="p-6">
@@ -182,7 +182,7 @@ const RDInterestRate = () => {
                       type="number"
                       value={monthlyAmount}
                       onChange={(e) => setMonthlyAmount(Number(e.target.value) || 0)}
-                      className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:bg-gray-700 dark:text-gray-300 rounded-lg focus:ring-2 focus:ring-[#6f3c85] focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-300 rounded-lg focus:ring-2 focus:ring-[#6f3c85] focus:border-transparent"
                       placeholder="Enter monthly amount"
                     />
                   </div>
@@ -212,7 +212,7 @@ const RDInterestRate = () => {
                       type="number"
                       value={tenure}
                       onChange={(e) => setTenure(Math.min(120, Math.max(6, Number(e.target.value) || 0)))}
-                      className="w-32 px-4 py-2 border border-gray-300 dark:bg-gray-700 dark:text-gray-300 rounded-lg focus:ring-2 focus:ring-[#6f3c85]"
+                      className="w-32 px-4 py-2 border border-gray-300 dark:bg-gray-800 dark:text-gray-300 rounded-lg focus:ring-2 focus:ring-[#6f3c85]"
                       placeholder="Months"
                     />
                     <span className="py-2 text-gray-500">months</span>
@@ -252,10 +252,10 @@ const RDInterestRate = () => {
                   </label>
                 </div>
 
-                <div className="p-4 rounded-lg bg-blue-50">
+                <div className="p-4 rounded-lg bg-blue-50 dark:bg-gray-800">
                   <div className="flex items-start gap-2">
                     <AlertCircle size={18} className="text-blue-600 mt-0.5" />
-                    <p className="text-xs text-gray-600">
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
                       RD interest is compounded quarterly. You can also take a loan against your RD up to 90% of the deposited amount.
                     </p>
                   </div>
@@ -263,64 +263,64 @@ const RDInterestRate = () => {
               </div>
 
               {/* Results Section */}
-              <div className="p-6 rounded-lg bg-gradient-to-br from-purple-50 to-pink-50">
-                <h3 className="mb-4 text-lg font-bold text-gray-800">Investment Summary</h3>
+              <div className="p-6 rounded-lg bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-800 shadow-xl">
+                <h3 className="mb-4 text-lg font-bold text-gray-800 dark:text-gray-100">Investment Summary</h3>
                 
                 <div className="space-y-3">
                   <div className="flex justify-between pb-2 border-b border-gray-200">
-                    <span className="text-gray-600">Monthly Deposit:</span>
-                    <span className="font-semibold text-gray-800">
+                    <span className="text-gray-600 dark:text-gray-300">Monthly Deposit:</span>
+                    <span className="font-semibold text-gray-800 dark:text-gray-100">
                       {formatCurrency(monthlyAmount)}
                     </span>
                   </div>
                   
                   <div className="flex justify-between pb-2 border-b border-gray-200">
-                    <span className="text-gray-600">Total Investment:</span>
-                    <span className="font-semibold text-gray-800">
+                    <span className="text-gray-600 dark:text-gray-300">Total Investment:</span>
+                    <span className="font-semibold text-gray-800 dark:text-gray-100">
                       {formatCurrency(calculationResult.totalInvestment)}
                     </span>
                   </div>
                   
                   <div className="flex justify-between pb-2 border-b border-gray-200">
-                    <span className="text-gray-600">Applicable Interest Rate:</span>
-                    <span className="font-semibold text-[#6f3c85] text-lg">
+                    <span className="text-gray-600 dark:text-gray-300">Applicable Interest Rate:</span>
+                    <span className="font-semibold text-[#6f3c85] text-lg dark:text-purple-600">
                       {calculationResult.effectiveRate}% p.a.
                     </span>
                   </div>
                   
                   <div className="flex justify-between pb-2 border-b border-gray-200">
-                    <span className="text-gray-600">Tenure:</span>
-                    <span className="font-semibold text-gray-800">
+                    <span className="text-gray-600 dark:text-gray-300">Tenure:</span>
+                    <span className="font-semibold text-gray-800 dark:text-gray-100">
                       {tenure} months ({Math.floor(tenure/12)} years {tenure%12} months)
                     </span>
                   </div>
                   
                   <div className="flex justify-between pb-2 border-b border-gray-200">
-                    <span className="text-gray-600">Interest Earned:</span>
-                    <span className="text-lg font-semibold text-green-600">
+                    <span className="text-gray-600 dark:text-gray-300">Interest Earned:</span>
+                    <span className="text-lg font-semibold text-green-600 dark:text-green-400">
                       {formatCurrency(calculationResult.interestEarned)}
                     </span>
                   </div>
                   
                   <div className="pt-3 mt-3">
                     <div className="flex justify-between">
-                      <span className="text-lg font-bold text-gray-800">Maturity Amount:</span>
-                      <span className="text-2xl font-bold text-[#6f3c85]">
+                      <span className="text-lg font-bold text-gray-800 dark:text-gray-100">Maturity Amount:</span>
+                      <span className="text-2xl font-bold text-[#6f3c85] dark:text-purple-600">
                         {formatCurrency(calculationResult.maturityAmount)}
                       </span>
                     </div>
-                    <p className="mt-1 text-xs text-gray-500">
+                    <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                       *TDS applicable as per income tax rules
                     </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 mt-6">
-                  <button className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 transition-all bg-white rounded-lg hover:shadow-md">
+                  <button className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-700 transition-all rounded-lg bg-slate-50 hover:shadow-md dark:bg-gray-900 dark:text-gray-300">
                     <Download size={16} />
                     Download
                   </button>
-                  <button className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 transition-all bg-white rounded-lg hover:shadow-md">
+                  <button className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-700 transition-all rounded-lg bg-slate-50 hover:shadow-md dark:bg-gray-900 dark:text-gray-300">
                     <Share2 size={16} />
                     Share
                   </button>
@@ -356,7 +356,7 @@ const RDInterestRate = () => {
                     <td className="px-4 py-3 font-medium text-gray-800 dark:text-gray-300">{plan.tenure}</td>
                     <td className="px-4 py-3 text-gray-600 dark:text-gray-400">{plan.rate}</td>
                     <td className="px-4 py-3">
-                      <span className="font-semibold text-[#6f3c85]">{plan.seniorRate}</span>
+                      <span className="font-semibold text-[#6f3c85] dark:text-purple-600">{plan.seniorRate}</span>
                     </td>
                   </tr>
                 ))}
@@ -394,29 +394,29 @@ const RDInterestRate = () => {
         </div>
 
         {/* Comparison Calculator */}
-        <div className="p-6 mb-12 bg-white rounded-lg shadow-lg">
-          <h3 className="mb-4 text-xl font-bold text-center text-gray-800">RD vs Other {' '}
+        <div className="p-6 mb-12 rounded-lg shadow-lg bg-slate-50 dark:bg-gray-900">
+          <h3 className="mb-4 text-xl font-bold text-center text-gray-800 dark:text-gray-50">RD vs Other {' '}
               <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
                 Savings Options
               </span></h3>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="p-4 text-center border rounded-lg">
+          <div className="grid gap-4 md:grid-cols-3 dark:text-gray-50">
+            <div className="p-4 text-center border-2 border-[#6f3c85] rounded-lg">
               <div className="mb-2 text-3xl">🏦</div>
               <h4 className="font-semibold">Savings Account</h4>
-              <p className="text-2xl font-bold text-gray-700">3-4%</p>
-              <p className="text-sm text-gray-500">Interest Rate</p>
+              <p className="text-2xl font-bold text-[#6f3c85]">3-4%</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Interest Rate</p>
             </div>
-            <div className="p-4 text-center border-2 border-[#6f3c85] rounded-lg bg-purple-50">
+            <div className="p-4 text-center border-2 border-[#6f3c85] rounded-lg">
               <div className="mb-2 text-3xl">💰</div>
               <h4 className="font-semibold">Recurring Deposit</h4>
               <p className="text-2xl font-bold text-[#6f3c85]">6.5-7.5%</p>
-              <p className="text-sm text-gray-500">Interest Rate</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Interest Rate</p>
             </div>
-            <div className="p-4 text-center border rounded-lg">
+            <div className="p-4 text-center border-2 border-[#6f3c85] rounded-lg">
               <div className="mb-2 text-3xl">📈</div>
               <h4 className="font-semibold">Fixed Deposit</h4>
-              <p className="text-2xl font-bold text-gray-700">7.2-8.5%</p>
-              <p className="text-sm text-gray-500">Interest Rate</p>
+              <p className="text-2xl font-bold text-[#6f3c85]">7.2-8.5%</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Interest Rate</p>
             </div>
           </div>
         </div>

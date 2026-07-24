@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useMemo } from "react";
 import Swal from 'sweetalert2';
+import { 
+  TrendingUp, 
+} from 'lucide-react';
 
 const MonthlyAccount = () => {
   const [hoveredRow, setHoveredRow] = useState(null);
@@ -292,6 +295,34 @@ const MonthlyAccount = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800 text-slate-900 dark:text-slate-100">
+      {/* Hero Section */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#228296] via-[#2c9cb3] to-[#6f3c85]">
+              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="container relative px-4 py-10 mx-auto md:pt-8 md:pb-24">
+                <div className="max-w-3xl mx-auto text-center text-white">
+                  <div className="inline-flex items-center px-3 py-2 mb-2 text-sm font-semibold rounded-full bg-gradient-to-br from-[#1a5b6b] to-[#6f3c85] backdrop-blur-sm">
+                    <TrendingUp size={16} className="mr-2" />
+                    Monthly Collections
+                  </div>
+                  <h1 className="mb-2 text-3xl font-bold md:text-4xl lg:text-5xl">
+                    Investment Monthly Tracker
+                  </h1>
+                  <p className="mb-3 text-base text-white/90 md:text-lg">
+                    Earn up to <span className="text-2xl font-bold">8.0% p.a.*</span> Track monthly collections across different investment scenarios with 1Y, 2Y, and 3Y projections.
+                  </p>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1440 120"
+                  fill="#f9fafb"
+                  className="dark:fill-gray-800"
+                >
+                  <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+                </svg>
+              </div>
+            </div>
       <div className="px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
         <div className="relative mb-10 overflow-hidden border shadow-2xl bg-slate-50 dark:bg-slate-900 rounded-3xl border-slate-200/50 dark:border-slate-700/50">
@@ -308,7 +339,7 @@ const MonthlyAccount = () => {
                 </p>
               </div>
               <h1 className="text-4xl font-bold sm:text-5xl bg-gradient-to-r from-[#228296] via-[#4a2c7a] to-[#6f3c85] bg-clip-text text-transparent">
-                Investment Monthly Tracker
+                Track Your Monthly Investments
               </h1>
               <p className="max-w-2xl mt-3 text-sm text-slate-600 dark:text-slate-400">
                 Track monthly collections across different investment scenarios

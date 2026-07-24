@@ -58,7 +58,7 @@ const DigitalServices = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-[#228296] via-[#2c9cb3] to-[#6f3c85]">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -75,7 +75,12 @@ const DigitalServices = () => {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#f9fafb">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 120"
+            fill="#f9fafb"
+            className="dark:fill-gray-800"
+          >
             <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
           </svg>
         </div>
@@ -85,7 +90,7 @@ const DigitalServices = () => {
         {/* Services Grid */}
         <div className="grid gap-6 mb-16 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <div key={index} className="p-6 transition-all duration-300 rounded-lg shadow-lg dark:bg-gray-800 bg-[#fff] hover:shadow-xl hover:-translate-y-2">
+            <div key={index} className="p-6 transition-all duration-300 rounded-lg shadow-lg dark:bg-gray-900 bg-slate-50 hover:shadow-xl hover:-translate-y-2">
               <div className="mb-4 text-[#228296]">{service.icon}</div>
               <h3 className="mb-3 text-xl font-bold text-gray-800 dark:text-gray-300">{service.title}</h3>
               <ul className="mb-4 space-y-1">
@@ -122,7 +127,7 @@ const DigitalServices = () => {
           </div>
           <div className="grid gap-6 md:grid-cols-4">
             {benefits.map((benefit, index) => (
-              <div key={index} className="p-6 text-center rounded-lg shadow-lg dark:bg-gray-800 bg-[#fff]">
+              <div key={index} className="p-6 text-center transition-all duration-300 rounded-lg shadow-lg dark:bg-gray-900 bg-slate-50 hover:shadow-xl hover:-translate-y-2">
                 <div className="flex justify-center mb-3 text-[#228296]">{benefit.icon}</div>
                 <h3 className="mb-2 font-semibold text-gray-800 dark:text-gray-300">{benefit.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.desc}</p>

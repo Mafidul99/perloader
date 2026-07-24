@@ -83,7 +83,7 @@ const Accounts = () => {
   const currentAccount = accountTypes[selectedAccount];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-[#228296] via-[#2c9cb3] to-[#6f3c85]">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -96,7 +96,12 @@ const Accounts = () => {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#f9fafb">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 120"
+            fill="#f9fafb"
+            className="dark:fill-gray-800"
+          >
             <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
           </svg>
         </div>
@@ -112,7 +117,7 @@ const Accounts = () => {
               className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${
                 selectedAccount === type
                   ? 'bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:shadow-md'
+                  : 'bg-slate-50 text-gray-700 hover:shadow-md'
               }`}
             >
               {type === 'savings' && <PiggyBank size={18} />}
@@ -125,7 +130,7 @@ const Accounts = () => {
 
         {/* Account Details */}
         <div className="grid gap-8 mb-16 md:grid-cols-2">
-          <div className="p-8 rounded-lg shadow-lg dark:bg-gray-800 bg-[#fff]">
+          <div className="p-8 rounded-lg shadow-lg dark:bg-gray-900 bg-slate-50">
             <div className="mb-4 text-[#228296]">{currentAccount.icon}</div>
             <h2 className="mb-2 text-3xl font-bold text-gray-800 dark:text-gray-300">{currentAccount.title}</h2>
             <div className="flex gap-4 mb-4">
@@ -150,7 +155,7 @@ const Accounts = () => {
             </button>
           </div>
 
-          <div className="p-8 rounded-lg shadow-md bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700">
+          <div className="p-8 rounded-lg shadow-md bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
             <h3 className="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-300">Why Choose This Account?</h3>
             <ul className="mb-6 space-y-3">
               {currentAccount.benefits.map((benefit, index) => (
@@ -177,7 +182,7 @@ const Accounts = () => {
               <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
                  Comparison
               </span></h2>
-          <div className="overflow-x-auto rounded-lg shadow-lg dark:bg-gray-800 bg-[#fff]">
+          <div className="overflow-x-auto rounded-lg shadow-lg dark:bg-gray-900 bg-slate-50">
             <table className="min-w-full">
               <thead className="bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white ">
                 <tr>
@@ -203,7 +208,7 @@ const Accounts = () => {
 
         {/* Collections Links */}
         <div className="mb-12">
-          <div className="max-w-4xl mx-auto rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+          <div className="max-w-4xl p-6 mx-auto border rounded-lg shadow-sm bg-slate-50 border-slate-200 dark:border-slate-700 dark:bg-slate-900">
             <h3 className="mb-4 text-lg font-semibold text-slate-800 dark:text-slate-100">Open Collections</h3>
             <p className="mb-4 text-sm text-slate-600 dark:text-slate-400">Quick access to collection reports.</p>
             <div className="flex flex-wrap gap-3">
