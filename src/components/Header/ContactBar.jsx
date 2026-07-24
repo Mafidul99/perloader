@@ -126,7 +126,7 @@ const ContactBar = () => {
 
         {/* Login Button */}
         <div className="flex items-center ml-4">
-          <a href="/login" target="_blank" rel="noopener noreferrer">
+          <a href="/ntccsl.nofinofinance.net" target="_blank" rel="noopener noreferrer">
             <button
                 className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-105"
               >
