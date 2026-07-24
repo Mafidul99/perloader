@@ -28,19 +28,22 @@ const LoginDropdown = () => {
     return () => document.removeEventListener('keydown', handleEsc);
   }, []);
 
+  const AdminUrl = import.meta.env.VITE_APP_ADMIN_URL || 'https://ntccsl.nofinofinance.net/admin/login';
+  const UserUrl = import.meta.env.VITE_APP_USER_URL || 'https://ntccsl.nofinofinance.net/login';
+
   const loginOptions = [
     {
       id: 'admin',
       label: 'Admin Login',
       icon: Shield,
-      url: 'https://ntccsl.nofinofinance.net/admin/login',
+      url: AdminUrl,
       description: 'Administrator access'
     },
     {
       id: 'user',
       label: 'User Login',
       icon: User,
-      url: 'https://ntccsl.nofinofinance.net/login',
+      url: UserUrl,
       description: 'Regular user access'
     }
   ];
@@ -79,8 +82,6 @@ const LoginDropdown = () => {
               <a
                 key={option.id}
                 href={option.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className={`flex items-center gap-3 px-4 py-3 text-sm transition-colors duration-150 group hover:bg-gradient-to-r hover:from-[#228296]/10 hover:to-[#6f3c85]/10 ${
                   index !== loginOptions.length - 1 ? 'border-b border-slate-50 dark:border-gray-500' : ''
                 }`}
