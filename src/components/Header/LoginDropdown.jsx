@@ -28,8 +28,8 @@ const LoginDropdown = () => {
     return () => document.removeEventListener('keydown', handleEsc);
   }, []);
 
-  const AdminUrl = import.meta.env.VITE_APP_ADMIN_URL || 'https://ntccsl.nofinofinance.net/admin/login';
-  const UserUrl = import.meta.env.VITE_APP_USER_URL || 'https://ntccsl.nofinofinance.net/login';
+  const AdminUrl = import.meta.env.VITE_APP_ADMIN_URL || 'https://nofino.ccsltd.in/Admin_Login.aspx';
+  const UserUrl = import.meta.env.VITE_APP_USER_URL || 'https://nofino.ccsltd.in/User_Login.aspx';
 
   const loginOptions = [
     {
