@@ -516,7 +516,7 @@ const DRDAccount = () => {
 
           {/* Results with Animation */}
           {showCalculator && calculatedMaturity && (
-            <div className={`mt-6 p-6 border rounded-2xl bg-gradient-to-r from-[#228296]/5 to-[#6f3c85]/5 border-slate-200 dark:border-slate-700 transition-all duration-500 ${
+            <div className={`mt-6 p-6 rounded-2xl bg-gradient-to-r from-[#228296]/5 to-[#6f3c85]/5 transition-all duration-500 ${
               isAnimating ? 'opacity-0 transform scale-95' : 'opacity-100 transform scale-100'
             }`}>
               <div className="flex items-center gap-2 mb-4">

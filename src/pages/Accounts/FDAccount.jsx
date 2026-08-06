@@ -453,7 +453,7 @@ const FDAccount = () => {
                   onChange={(e) => setInvestmentAmount(Number(e.target.value))}
                   min="10000"
                   max="5000000"
-                  className="w-full px-4 py-2.5 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#228296] transition-all duration-200"
+                  className="w-full px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#228296] transition-all duration-200"
                 />
                 <div className="absolute right-3 top-2.5 text-xs text-slate-400 dark:text-slate-500">
                   ₹10K - ₹50L
@@ -467,7 +467,7 @@ const FDAccount = () => {
               <select
                 value={selectedPeriod}
                 onChange={(e) => setSelectedPeriod(e.target.value)}
-                className="w-full px-4 py-2.5 border rounded-lg bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#228296] transition-all duration-200"
+                className="w-full px-4 py-2.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#228296] transition-all duration-200"
               >
                 {Object.keys(interestRates).map((period) => (
                   <option key={period} value={period}>
@@ -496,7 +496,7 @@ const FDAccount = () => {
 
           {/* Results */}
           {showCalculator && calculatedMaturity && (
-            <div className={`mt-6 p-6 border rounded-2xl bg-gradient-to-r from-[#228296]/5 to-[#6f3c85]/5 border-slate-200 dark:border-slate-700 transition-all duration-500 ${
+            <div className={`mt-6 p-6 rounded-2xl bg-gradient-to-r from-[#228296]/5 to-[#6f3c85]/5 transition-all duration-500 ${
               isAnimating ? 'opacity-0 transform scale-95' : 'opacity-100 transform scale-100'
             }`}>
               <div className="flex items-center gap-2 mb-4">
