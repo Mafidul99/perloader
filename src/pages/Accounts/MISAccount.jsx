@@ -299,7 +299,7 @@ const MISAccount = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800 text-slate-900 dark:text-slate-100">
       <div className="px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="relative mb-10 overflow-hidden border shadow-2xl bg-slate-50 dark:bg-slate-900 rounded-3xl border-slate-200/50 dark:border-slate-700/50">
+        <div className="relative mb-10 overflow-hidden shadow-2xl bg-slate-50 dark:bg-slate-900 rounded-3xl border-slate-200/50 dark:border-slate-700/50">
           <div className="absolute inset-0 bg-gradient-to-r from-[#228296]/5 via-transparent to-[#6f3c85]/5"></div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#228296]/10 to-[#6f3c85]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 animate-pulse"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#228296]/10 to-[#6f3c85]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 animate-pulse"></div>
@@ -354,7 +354,7 @@ const MISAccount = () => {
               key={index}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
-              className={`p-6 transition-all duration-500 bg-slate-50 border shadow-lg dark:bg-slate-900 rounded-2xl border-slate-200/50 dark:border-slate-700/50 hover:shadow-xl ${
+              className={`p-6 transition-all duration-500 bg-slate-50 shadow-lg dark:bg-slate-900 rounded-2xl hover:shadow-xl ${
                 hoveredCard === index ? 'scale-105 -translate-y-1' : 'scale-100'
               }`}
             >
@@ -378,7 +378,7 @@ const MISAccount = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="p-6 transition-all duration-300 border shadow-lg cursor-pointer bg-slate-50 dark:bg-slate-900 rounded-2xl border-slate-200/50 dark:border-slate-700/50 hover:shadow-xl hover:scale-105 group"
+              className="p-6 transition-all duration-300 shadow-lg cursor-pointer bg-slate-50 dark:bg-slate-900 rounded-2xl hover:shadow-xl hover:scale-105 group"
             >
               <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${feature.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
                 {feature.icon}
@@ -393,7 +393,7 @@ const MISAccount = () => {
         </div>
 
         {/* Benefits Section */}
-        <div className="p-8 mb-8 border shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl border-slate-200/50 dark:border-slate-700/50">
+        <div className="p-8 mb-8 shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
               <span className="inline-block w-1.5 h-6 rounded-full bg-gradient-to-b from-[#228296] to-[#6f3c85]"></span>
@@ -430,7 +430,7 @@ const MISAccount = () => {
         </div>
 
         {/* Calculator Section */}
-        <div className="p-8 mb-8 border shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl border-slate-200/50 dark:border-slate-700/50">
+        <div className="p-8 mb-8 shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
               <span className="inline-block w-1.5 h-6 rounded-full bg-gradient-to-b from-[#228296] to-[#6f3c85]"></span>
@@ -499,7 +499,7 @@ const MISAccount = () => {
 
           {/* Results */}
           {showCalculator && calculatedMaturity && (
-            <div className={`mt-6 p-6 border rounded-2xl bg-gradient-to-r from-[#228296]/5 to-[#6f3c85]/5 border-slate-200 dark:border-slate-700 transition-all duration-500 ${
+            <div className={`mt-6 p-6 rounded-2xl bg-gradient-to-r from-[#228296]/5 to-[#6f3c85]/5 transition-all duration-500 ${
               isAnimating ? 'opacity-0 transform scale-95' : 'opacity-100 transform scale-100'
             }`}>
               <div className="flex items-center gap-2 mb-4">
@@ -534,7 +534,7 @@ const MISAccount = () => {
         </div>
 
         {/* Testimonials */}
-        <div className="p-8 mb-8 border shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl border-slate-200/50 dark:border-slate-700/50">
+        <div className="p-8 mb-8 shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl">
           <div className="flex items-center gap-3 mb-6">
             <span className="inline-block w-1.5 h-6 rounded-full bg-gradient-to-b from-[#228296] to-[#6f3c85]"></span>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">What Our Customers Say</h2>
@@ -563,7 +563,7 @@ const MISAccount = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="p-8 mb-8 border shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl border-slate-200/50 dark:border-slate-700/50">
+        <div className="p-8 mb-8 shadow-lg bg-slate-50 dark:bg-slate-900 rounded-3xl">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
               <span className="inline-block w-1.5 h-6 rounded-full bg-gradient-to-b from-[#228296] to-[#6f3c85]"></span>
@@ -604,7 +604,7 @@ const MISAccount = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="relative p-8 overflow-hidden border shadow-xl bg-gradient-to-r from-[#228296] to-[#6f3c85] rounded-3xl border-slate-200/50">
+        <div className="relative p-8 overflow-hidden shadow-xl bg-gradient-to-r from-[#228296] to-[#6f3c85] rounded-3xl">
           <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-white/10 blur-3xl animate-pulse"></div>
           <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 rounded-full w-96 h-96 bg-white/10 blur-3xl animate-pulse"></div>
           
