@@ -53,6 +53,7 @@ import BranchesAtms from "./pages/FooterPages/BranchesAtms";
 import SupportTicket from "./pages/SupportTicket";
 import Services from "./pages/Services/Services";
 import MaturityProjection from "./pages/MaturityProjection";
+import FDAccount from "./pages/Accounts/FDAccount";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -109,6 +110,7 @@ function App() {
           <Route path="mis-account" element={<MISAccount />} />
           <Route path="rd-account" element={<RDAccount />} />
           <Route path="drd-account" element={<DRDAccount />} />
+          <Route path="fd-account" element={<FDAccount />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsConditions />} />

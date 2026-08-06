@@ -31,6 +31,7 @@ const Navbar = () => {
         { name: 'Rd Account', href: 'rd-account' },
         { name: 'MIS Account', href: 'mis-account' },
         { name: 'DRD Account', href: 'drd-account' },
+        { name: 'FD Account', href: 'fd-account' },
         { name: 'Fixed Deposit', href: 'fixed-deposit' },
       ],
     },
