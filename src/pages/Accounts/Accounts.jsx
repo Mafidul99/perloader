@@ -207,16 +207,22 @@ const Accounts = () => {
         </div>
 
         {/* Collections Links */}
-        <div className="mb-12">
-          <div className="max-w-4xl p-6 mx-auto border rounded-lg shadow-sm bg-slate-50 border-slate-200 dark:border-slate-700 dark:bg-slate-900">
-            <h3 className="mb-4 text-lg font-semibold text-slate-800 dark:text-slate-100">Open Collections</h3>
-            <p className="mb-4 text-sm text-slate-600 dark:text-slate-400">Quick access to collection reports.</p>
-            <div className="flex flex-wrap gap-3">
-              <a href="/accounts/daily" className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white">Daily</a>
-              <a href="/accounts/weekly" className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-800">Weekly</a>
-              <a href="/accounts/monthly" className="inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-slate-100 text-slate-800">Monthly</a>
-            </div>
-          </div>
+        <div className="grid gap-6 mb-16 md:grid-cols-3">
+          <a href="/services" className="flex flex-col items-center p-6 text-center transition-all rounded-lg shadow-md bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-900 hover:shadow-lg">
+            <Shield size={32} className="mb-2 text-[#228296]" />
+            <h3 className="mb-1 text-lg font-semibold text-gray-800 dark:text-gray-300">Secure Banking</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Your money is safe with our advanced security measures.</p>
+          </a>
+          <a href="/digital-services" className="flex flex-col items-center p-6 text-center transition-all rounded-lg shadow-md bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-900 hover:shadow-lg">
+            <Smartphone size={32} className="mb-2 text-[#228296]" />
+            <h3 className="mb-1 text-lg font-semibold text-gray-800 dark:text-gray-300">Digital Services</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Access your account anytime, anywhere with our digital solutions.</p>
+          </a>
+          <a href="/schemes" className="flex flex-col items-center p-6 text-center transition-all rounded-lg shadow-md bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-900 hover:shadow-lg">
+            <Gift size={32} className="mb-2 text-[#228296]" />
+            <h3 className="mb-1 text-lg font-semibold text-gray-800 dark:text-gray-300">Special Schemes</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Explore our exclusive schemes and offers tailored for you.</p>
+          </a>
         </div>
 
         {/* CTA */}

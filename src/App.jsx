@@ -36,6 +36,9 @@ import MonthlyAccount from "./pages/Accounts/MonthlyAccount";
 import Loans from "./pages/Loans/Loans";
 import DigitalServices from "./pages/DigitalServices/DigitalServices";
 import Schemes from "./pages/Schemes/Schemes";
+import MISAccount from "./pages/Accounts/MISAccount";
+import RDAccount from "./pages/Accounts/RDAccount";
+import DRDAccount from "./pages/Accounts/DRDAccount";
 import MainLayout from "./components/Layout/MainLayout";
 import Disclaimer from "./pages/FooterPages/Disclaimer";
 import PrivacyPolicy from "./pages/FooterPages/PrivacyPolicy";
@@ -103,6 +106,9 @@ function App() {
           <Route path="daily-account" element={<DailyAccount />} />
           <Route path="weekly-account" element={<WeeklyAccount />} />
           <Route path="monthly-account" element={<MonthlyAccount />} />
+          <Route path="mis-account" element={<MISAccount />} />
+          <Route path="rd-account" element={<RDAccount />} />
+          <Route path="drd-account" element={<DRDAccount />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsConditions />} />

@@ -28,6 +28,9 @@ const Navbar = () => {
       submenuLinks: [
         { name: 'Savings Account', href: 'savings-account' },
         { name: 'Current Account', href: 'current-account' },
+        { name: 'Rd Account', href: 'rd-account' },
+        { name: 'MIS Account', href: 'mis-account' },
+        { name: 'DRD Account', href: 'drd-account' },
         { name: 'Fixed Deposit', href: 'fixed-deposit' },
       ],
     },

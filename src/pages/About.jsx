@@ -33,7 +33,7 @@ const AboutSection = () => {
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-12 lg:flex-row">
           {/* Left Content */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 ">
             <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
               Welcome to{' '}
               <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
@@ -57,7 +57,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right Image */}
-          <div className="lg:w-1/2 bg-inherit">
+          <div className="shadow-md lg:w-1/2 bg-inherit bg-slate-50 dark:bg-gray-900 rounded-2xl">
             <img
               src={giftLogo}
               alt="About Us"
