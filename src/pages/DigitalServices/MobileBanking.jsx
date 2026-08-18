@@ -25,7 +25,8 @@ import {
   Play,
 } from "lucide-react";
 
-import qrCodeImage from "../../assets/qrcode.png";
+import qrCodeImage from "../../assets/qrcode.svg"; // Ensure you have a QR code image in your assets folder
+
 
 const MobileBanking = () => {
   const [showDownloadModal, setShowDownloadModal] = useState(false);
@@ -122,6 +123,17 @@ const MobileBanking = () => {
       desc: "Enjoy seamless banking experience",
     },
   ];
+
+
+  const memberAppStores =  {
+    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member.apk',
+    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member.apk',
+  };
+
+  const collectorAppStores = {
+    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector.apk',
+    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector.apk',
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
@@ -403,14 +415,14 @@ const MobileBanking = () => {
                     </div>
                   </div>
 
-                  {/* Download Buttons */}
+                  {/* Member Download Buttons */}
                   <div className="space-y-3">
                     <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      Download now for free
+                      Download now for free (Member App only)
                     </p>
                     <div className="flex flex-wrap items-center gap-4">
                       <a
-                        href="#"
+                        href={memberAppStores.ios}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 px-6 py-3 text-white transition-all bg-black rounded-xl hover:scale-105 hover:shadow-xl group"
@@ -430,7 +442,54 @@ const MobileBanking = () => {
                         />
                       </a>
                       <a
-                        href="#"
+                        href={memberAppStores.android}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-6 py-3 text-white transition-all bg-black rounded-xl hover:scale-105 hover:shadow-xl group"
+                      >
+                        <Smartphone size={24} />
+                        <div className="text-left">
+                          <div className="text-xs opacity-80">Get it on</div>
+                          <div className="text-base font-semibold">
+                            Google Play
+                          </div>
+                        </div>
+                        <ChevronRight
+                          size={20}
+                          className="transition-opacity opacity-0 group-hover:opacity-100"
+                        />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Collector Download Buttons */}
+                  <div className="space-y-3">
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      Download now for free (Collectors App only)
+                    </p>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <a
+                        href={collectorAppStores.ios}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 px-6 py-3 text-white transition-all bg-black rounded-xl hover:scale-105 hover:shadow-xl group"
+                      >
+                        <Apple size={24} />
+                        <div className="text-left">
+                          <div className="text-xs opacity-80">
+                            Download on the
+                          </div>
+                          <div className="text-base font-semibold">
+                            App Store
+                          </div>
+                        </div>
+                        <ChevronRight
+                          size={20}
+                          className="transition-opacity opacity-0 group-hover:opacity-100"
+                        />
+                      </a>
+                      <a
+                        href={collectorAppStores.android}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 px-6 py-3 text-white transition-all bg-black rounded-xl hover:scale-105 hover:shadow-xl group"

@@ -18,6 +18,8 @@ import {
   FaHeadset,
   FaQuestionCircle,
   FaTicketAlt,
+  FaApple, FaUserTie, FaCheckCircle,
+  FaUserCircle, FaUsers
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -642,9 +644,65 @@ const TopBar = () => {
     </div>
   );
 
-  const MobileBankingModal = () => (
+  // const MobileBankingModal = () => (
+  //   <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+  //     <div className="relative w-full max-w-md rounded-lg shadow-xl dark:bg-gray-900 bg-slate-50">
+  //       <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white rounded-t-lg">
+  //         <h2 className="text-xl font-bold">Mobile Banking</h2>
+  //         <button
+  //           onClick={closeModal}
+  //           className="text-white transition hover:opacity-80"
+  //         >
+  //           <FaTimes size={20} />
+  //         </button>
+  //       </div>
+
+  //       <div className="p-6 text-center">
+  //         <FaAndroid size={48} className="mx-auto mb-4 text-[#228296]" />
+  //         <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-200">
+  //           Download Our App
+  //         </h3>
+  //         <p className="mb-6 text-gray-600 dark:text-gray-300">
+  //           Experience seamless banking on your mobile
+  //         </p>
+  //         <div className="space-y-3">
+  //           <button className="w-full py-2 text-white rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg transition-all font-semibold">
+  //             Download for Android
+  //           </button>
+  //           <button className="w-full py-2 text-gray-700 transition-all bg-gray-100 rounded-lg hover:bg-gray-200">
+  //             Download for iOS
+  //           </button>
+  //         </div>
+  //         <button
+  //           onClick={closeModal}
+  //           className="w-full py-2 mt-4 text-gray-500 transition-all border border-gray-300 rounded-lg dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-50 dark:text-gray-300"
+  //         >
+  //           Close
+  //         </button>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
+
+  const MobileBankingModal = () => {
+  const [selectedApp, setSelectedApp] = useState('member');
+  const openAppStore = (url) => {
+    window.open(url, '_blank');
+  };
+
+  const memberAppStores =  {
+    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member.apk',
+    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member.apk',
+  };
+
+  const collectorAppStores = {
+    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector.apk',
+    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector.apk',
+  };
+
+  return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-md rounded-lg shadow-xl dark:bg-gray-900 bg-slate-50">
+      <div className="relative w-full max-w-2xl rounded-lg shadow-xl dark:bg-gray-900 bg-slate-50">
         <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white rounded-t-lg">
           <h2 className="text-xl font-bold">Mobile Banking</h2>
           <button
@@ -655,32 +713,253 @@ const TopBar = () => {
           </button>
         </div>
 
-        <div className="p-6 text-center">
-          <FaAndroid size={48} className="mx-auto mb-4 text-[#228296]" />
-          <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-200">
-            Download Our App
-          </h3>
-          <p className="mb-6 text-gray-600 dark:text-gray-300">
-            Experience seamless banking on your mobile
-          </p>
-          <div className="space-y-3">
-            <button className="w-full py-2 text-white rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg transition-all font-semibold">
-              Download for Android
+        <div className="p-6">
+          {/* App Type Selector */}
+          <div className="flex gap-2 p-1 mb-6 bg-gray-100 rounded-lg dark:bg-gray-800">
+            <button
+              onClick={() => setSelectedApp('member')}
+              className={`flex-1 py-2 px-4 rounded-md transition-all font-medium text-sm ${
+                selectedApp === 'member'
+                  ? 'bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white shadow-md'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+            >
+              <FaUser className="inline mr-2" />
+              Member
             </button>
-            <button className="w-full py-2 text-gray-700 transition-all bg-gray-100 rounded-lg hover:bg-gray-200">
-              Download for iOS
+            <button
+              onClick={() => setSelectedApp('collector')}
+              className={`flex-1 py-2 px-4 rounded-md transition-all font-medium text-sm ${
+                selectedApp === 'collector'
+                  ? 'bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white shadow-md'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+            >
+              <FaUserTie className="inline mr-2" />
+              Collector
             </button>
           </div>
-          <button
-            onClick={closeModal}
-            className="w-full py-2 mt-4 text-gray-500 transition-all border border-gray-300 rounded-lg dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-50 dark:text-gray-300"
-          >
-            Close
-          </button>
+
+          {/* Member App Content */}
+          {selectedApp === 'member' && (
+            <div className="text-center animate-fadeIn">
+              <FaUser size={48} className="mx-auto mb-4 text-[#228296]" />
+              <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-200">
+                Member App
+              </h3>
+              <p className="mb-6 text-gray-600 dark:text-gray-300">
+                Manage your accounts, transfer funds, and track transactions on the go
+              </p>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <button
+                    onClick={() => openAppStore(memberAppStores.android)}
+                    className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-[1.02] transform"
+                  >
+                    <FaAndroid size={24} />
+                    <div className="text-left">
+                      <div className="text-xs font-normal opacity-90">Download for</div>
+                      <div className="font-semibold">Android</div>
+                    </div>
+                  </button>
+                  
+                  <button
+                    onClick={() => openAppStore(memberAppStores.ios)}
+                    className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-lg hover:scale-[1.02] transform dark:bg-gray-700 dark:hover:bg-gray-600"
+                  >
+                    <FaApple size={24} />
+                    <div className="text-left">
+                      <div className="text-xs font-normal opacity-90">Download for</div>
+                      <div className="font-semibold">iOS</div>
+                    </div>
+                  </button>
+              </div>
+              <div className="p-3 mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20">
+                <p className="text-xs text-gray-600 dark:text-gray-400">
+                  <FaCheckCircle className="inline mr-1 text-[#228296]" />
+                  Latest version 3.2.1 • 4.8 ★ Rating
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Collector App Content */}
+          {selectedApp === 'collector' && (
+            <div className="text-center animate-fadeIn">
+              <FaUserTie size={48} className="mx-auto mb-4 text-[#6f3c85]" />
+              <h3 className="mb-2 text-lg font-bold text-gray-800 dark:text-gray-200">
+                Collector App
+              </h3>
+              <p className="mb-6 text-gray-600 dark:text-gray-300">
+                Collect payments, manage collections, and track field activities efficiently
+              </p>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <button
+                    onClick={() => openAppStore(collectorAppStores.android)}
+                    className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-[1.02] transform"
+                  >
+                    <FaAndroid size={24} />
+                    <div className="text-left">
+                      <div className="text-xs font-normal opacity-90">Download for</div>
+                      <div className="font-semibold">Android</div>
+                    </div>
+                  </button>
+                  
+                  <button
+                    onClick={() => openAppStore(collectorAppStores.ios)}
+                    className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-lg hover:scale-[1.02] transform dark:bg-gray-700 dark:hover:bg-gray-600"
+                  >
+                    <FaApple size={24} />
+                    <div className="text-left">
+                      <div className="text-xs font-normal opacity-90">Download for</div>
+                      <div className="font-semibold">iOS</div>
+                    </div>
+                  </button>
+              </div>
+              <div className="p-3 mt-4 rounded-lg bg-purple-50 dark:bg-purple-900/20">
+                <p className="text-xs text-gray-600 dark:text-gray-400">
+                  <FaCheckCircle className="inline mr-1 text-[#6f3c85]" />
+                  Latest version 2.5.0 • 4.6 ★ Rating
+                </p>
+              </div>
+            </div>
+            
+          )}
         </div>
       </div>
     </div>
   );
+  };
+
+// const MobileBankingModal = () => {
+//   // Mock function for opening app stores
+//   const openAppStore = (url) => {
+//     window.open(url, '_blank');
+//   };
+
+//   return (
+//     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+//       <div className="relative w-full max-w-2xl rounded-lg shadow-xl dark:bg-gray-900 bg-slate-50">
+//         <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#228296] to-[#6f3c85] text-white rounded-t-lg">
+//           <h2 className="text-xl font-bold">Mobile Banking</h2>
+//           <button
+//             onClick={closeModal}
+//             className="text-white transition hover:opacity-80"
+//           >
+//             <FaTimes size={20} />
+//           </button>
+//         </div>
+
+//         <div className="p-6">
+//           {/* Member App Section */}
+//           <div className="mb-8">
+//             <div className="flex items-center gap-3 mb-4">
+//               <div className="p-2 rounded-full bg-[#228296]/10">
+//                 <FaUserCircle size={28} className="text-[#228296]" />
+//               </div>
+//               <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200">
+//                 Member App
+//               </h3>
+//               <span className="px-2 py-1 text-xs font-semibold text-white bg-green-500 rounded-full">
+//                 Available
+//               </span>
+//             </div>
+            
+//             <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
+//               Access your accounts, transfer funds, pay bills, and manage your finances on the go.
+//             </p>
+            
+//             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+//               <button
+//                 onClick={() => openAppStore('https://play.google.com/store/apps')}
+//                 className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-[1.02] transform"
+//               >
+//                 <FaAndroid size={24} />
+//                 <div className="text-left">
+//                   <div className="text-xs font-normal opacity-90">Download for</div>
+//                   <div className="font-semibold">Android</div>
+//                 </div>
+//               </button>
+              
+//               <button
+//                 onClick={() => openAppStore('https://apps.apple.com/app')}
+//                 className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-lg hover:scale-[1.02] transform dark:bg-gray-700 dark:hover:bg-gray-600"
+//               >
+//                 <FaApple size={24} />
+//                 <div className="text-left">
+//                   <div className="text-xs font-normal opacity-90">Download for</div>
+//                   <div className="font-semibold">iOS</div>
+//                 </div>
+//               </button>
+//             </div>
+//           </div>
+
+//           {/* Divider */}
+//           <div className="relative my-6">
+//             <div className="absolute inset-0 flex items-center">
+//               <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+//             </div>
+//             <div className="relative flex justify-center text-sm">
+//               <span className="px-3 text-gray-500 bg-slate-50 dark:bg-gray-900 dark:text-gray-400">
+//                 Collector Access
+//               </span>
+//             </div>
+//           </div>
+
+//           {/* Collector App Section */}
+//           <div>
+//             <div className="flex items-center gap-3 mb-4">
+//               <div className="p-2 rounded-full bg-[#6f3c85]/10">
+//                 <FaUsers size={28} className="text-[#6f3c85]" />
+//               </div>
+//               <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200">
+//                 Collector App
+//               </h3>
+//               <span className="px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded-full">
+//                 Staff Only
+//               </span>
+//             </div>
+            
+//             <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
+//               Field collection, customer verification, payment tracking, and real-time reporting for collection officers.
+//             </p>
+            
+//             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+//               <button
+//                 onClick={() => openAppStore('https://play.google.com/store/apps')}
+//                 className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#6f3c85] to-[#228296] hover:shadow-lg hover:scale-[1.02] transform"
+//               >
+//                 <FaAndroid size={24} />
+//                 <div className="text-left">
+//                   <div className="text-xs font-normal opacity-90">Download for</div>
+//                   <div className="font-semibold">Android</div>
+//                 </div>
+//               </button>
+              
+//               <button
+//                 onClick={() => openAppStore('https://apps.apple.com/app')}
+//                 className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-lg hover:scale-[1.02] transform dark:bg-gray-700 dark:hover:bg-gray-600"
+//               >
+//                 <FaApple size={24} />
+//                 <div className="text-left">
+//                   <div className="text-xs font-normal opacity-90">Download for</div>
+//                   <div className="font-semibold">iOS</div>
+//                 </div>
+//               </button>
+//             </div>
+//           </div>
+
+//           {/* Close Button */}
+//           <button
+//             onClick={closeModal}
+//             className="w-full py-2.5 mt-6 text-gray-500 transition-all border border-gray-300 rounded-lg hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300 dark:border-gray-600"
+//           >
+//             Close
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
   const CustomerSupportModal = () => (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
