@@ -691,16 +691,16 @@ const TopBar = () => {
   };
 
   const memberAppStores =  {
-    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member_1.0.0.2.apk',
-    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Collector_1.0.0.2.apk',
+    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member_1002.apk',
+    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
   };
 
   const collectorAppStores = {
-    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1.0.0.2.apk',
-    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1.0.0.2.apk',
+    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
+    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
   };
 
-  const apkUrlMem = `/${selectedApp === 'member' ? 'mobAPK/Nofino_Member_1.0.0.2.apk' : 'mobAPK/Nofino_Collector_1.0.0.2.apk'}`;
+  const apkUrlMem = `/${selectedApp === 'member' ? 'mobAPK/Nofino_Member_1002.apk' : 'mobAPK/Nofino_Collector_1002.apk'}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
