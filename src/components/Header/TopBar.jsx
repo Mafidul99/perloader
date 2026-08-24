@@ -753,7 +753,7 @@ const TopBar = () => {
                 Manage your accounts, transfer funds, and track transactions on the go
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <button
+                  <a href={memberAppStores.android}
                     onClick={() => openAppStore(memberAppStores.android)}
                     download={apkUrlMem}
                     className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-[1.02] transform"
@@ -763,9 +763,9 @@ const TopBar = () => {
                       <div className="text-xs font-normal opacity-90">Download for</div>
                       <div className="font-semibold">Android</div>
                     </div>
-                  </button>
+                  </a>
                   
-                  <button
+                  <a href={memberAppStores.ios}
                     onClick={() => openAppStore(memberAppStores.ios)}
                     download={apkUrlMem}
                     className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-lg hover:scale-[1.02] transform dark:bg-gray-700 dark:hover:bg-gray-600"
@@ -775,7 +775,7 @@ const TopBar = () => {
                       <div className="text-xs font-normal opacity-90">Download for</div>
                       <div className="font-semibold">iOS</div>
                     </div>
-                  </button>
+                  </a>
               </div>
               <div className="p-3 mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20">
                 <p className="text-xs text-gray-600 dark:text-gray-400">
