@@ -700,6 +700,8 @@ const TopBar = () => {
     ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1.0.0.2.apk',
   };
 
+  const apkUrlMem = `/${selectedApp === 'member' ? 'mobAPK/Nofino_Member_1.0.0.2.apk' : 'mobAPK/Nofino_Collector_1.0.0.2.apk'}`;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
       <div className="relative w-full max-w-2xl rounded-lg shadow-xl dark:bg-gray-900 bg-slate-50">
@@ -753,6 +755,7 @@ const TopBar = () => {
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <button
                     onClick={() => openAppStore(memberAppStores.android)}
+                    download={apkUrlMem}
                     className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-[1.02] transform"
                   >
                     <FaAndroid size={24} />
@@ -764,6 +767,7 @@ const TopBar = () => {
                   
                   <button
                     onClick={() => openAppStore(memberAppStores.ios)}
+                    download={apkUrlMem}
                     className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-lg hover:scale-[1.02] transform dark:bg-gray-700 dark:hover:bg-gray-600"
                   >
                     <FaApple size={24} />
