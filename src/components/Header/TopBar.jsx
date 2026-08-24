@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/static-components */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import {
   FaFacebook,
@@ -22,10 +22,11 @@ import {
   FaUserCircle, FaUsers
 } from "react-icons/fa";
 import { FaSpinner } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TopBar = () => {
   const [activeModal, setActiveModal] = useState(null);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     // Open Account Form
     fullName: "",
@@ -48,14 +49,20 @@ const TopBar = () => {
     monthlyIncome: "",
   });
 
+  useEffect(() => {
+    document.body.style.overflow = activeModal ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [activeModal]);
+
   const openModal = (modalId) => {
     setActiveModal(modalId);
-    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setActiveModal(null);
-    document.body.style.overflow = "auto";
   };
 
   const handleInputChange = (e) => {
@@ -696,20 +703,22 @@ const TopBar = () => {
   const handleMemberAppDownload = () => {
     setIsMemberAppLoading(true);
     window.setTimeout(() => {
-       // android or ios download link based on the user's device can be handled here
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      openAppStore(isIOS ? memberAppStores.android : memberAppStores.ios);
+      openAppStore(isIOS ? memberAppStores.ios : memberAppStores.android);
       setIsMemberAppLoading(false);
+      closeModal();
+      navigate("/");
     }, 800);
   };
 
   const handleCollectorAppDownload = () => {
     setIsCollectorAppLoading(true);
     window.setTimeout(() => {
-      // android or ios download link based on the user's device can be handled here
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      openAppStore(isIOS ? collectorAppStores.android : collectorAppStores.ios);
+      openAppStore(isIOS ? collectorAppStores.ios : collectorAppStores.android);
       setIsCollectorAppLoading(false);
+      closeModal();
+      navigate("/");
     }, 800);
   };
 
@@ -788,6 +797,7 @@ const TopBar = () => {
                       <div className="font-semibold">{isMemberAppLoading ? "Loading..." : "Android"}</div>
                     </div>
                   </button>
+
                   
                   <a href={memberAppStores.ios}
                     onClick={() => openAppStore(memberAppStores.ios)}
