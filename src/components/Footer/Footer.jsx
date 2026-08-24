@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/static-components */
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, ExternalLink, Clock, Shield, MoveRight, X } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaApple, FaAndroid, FaUserCircle, FaUsers } from 'react-icons/fa';
@@ -357,11 +358,11 @@ const Footer = () => {
                 <div className="flex items-center space-x-3 group">
                   <Mail size={18} className="text-[#228296] group-hover:scale-110 transition-transform" />
                   <div>
-                    <a href="mailto:info@ntccsl.com" className="block text-sm text-gray-400 transition hover:text-white">
-                      info@ntccsl.com
+                    <a href="mailto:cmd@ntccsl.in" className="block text-sm text-gray-400 transition hover:text-white">
+                      cmd@ntccsl.in
                     </a>
-                    <a href="mailto:support@ntccsl.com" className="text-xs text-gray-400 transition hover:text-white">
-                      support@ntccsl.com
+                    <a href="mailto:support@ntccsl.in" className="text-xs text-gray-400 transition hover:text-white">
+                      support@ntccsl.in
                     </a>
                   </div>
                 </div>

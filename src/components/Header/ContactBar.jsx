@@ -120,27 +120,26 @@ const ContactBar = () => {
           <div className="flex items-center gap-2">
             <Phone size={16} className="text-[#228296]" />
             <a
-              href="tel:+9118001234567"
+              href="tel:+916002562417"
               className="hover:text-[#6f3c85] transition-colors"
             >
-              +91 1800 123 4567
+              +91 6002562417
             </a>
           </div>
           <div className="flex items-center gap-2">
             <Mail size={16} className="text-[#228296]" />
             <a
-              href="mailto:info@ntccsl.com"
+              href="mailto:support@ntccsl.in"
               className="hover:text-[#6f3c85] transition-colors"
             >
-              info@ntccsl.com
+              support@ntccsl.in
             </a>
           </div>
           <div className="flex items-center gap-2">
             <IdCard size={16} className="text-[#228296]" />
-            <span>Reg No: NTCCSL/CR/1098/2026</span>
+            <span>Reg No: B-08/2026-27</span>
           </div>
         </div>
-
 
         {/* Login Admin User Drop down Button */}
           <LoginDropdown/>
