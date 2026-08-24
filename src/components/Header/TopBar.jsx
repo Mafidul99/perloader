@@ -23,6 +23,7 @@ import {
 } from "react-icons/fa";
 import { FaSpinner } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import ApkButton from "./APKButton/ApkButton";
 
 const TopBar = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -723,13 +724,13 @@ const TopBar = () => {
   };
 
   const memberAppStores =  {
-    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member_1002.apk',
-    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member_1002.apk',
+    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../mobAPK/Nofino_Member_1002.apk',
+    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../mobAPK/Nofino_Member_1002.apk',
   };
 
   const collectorAppStores = {
-    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
-    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
+    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../mobAPK/Nofino_Collector_1002.apk',
+    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../mobAPK/Nofino_Collector_1002.apk',
   };
 
   return (
@@ -783,7 +784,6 @@ const TopBar = () => {
                 Manage your accounts, transfer funds, and track transactions on the go
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                
                   <button
                     type="button"
                     onClick={handleMemberAppDownload}
