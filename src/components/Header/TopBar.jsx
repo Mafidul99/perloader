@@ -21,6 +21,7 @@ import {
   FaApple, FaUserTie, FaCheckCircle,
   FaUserCircle, FaUsers
 } from "react-icons/fa";
+import { FaSpinner } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const TopBar = () => {
@@ -686,21 +687,41 @@ const TopBar = () => {
 
   const MobileBankingModal = () => {
   const [selectedApp, setSelectedApp] = useState('member');
+  const [isMemberAppLoading, setIsMemberAppLoading] = useState(false);
+  const [isCollectorAppLoading, setIsCollectorAppLoading] = useState(false);
   const openAppStore = (url) => {
     window.open(url, '_blank');
   };
 
+  const handleMemberAppDownload = () => {
+    setIsMemberAppLoading(true);
+    window.setTimeout(() => {
+       // android or ios download link based on the user's device can be handled here
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      openAppStore(isIOS ? memberAppStores.android : memberAppStores.ios);
+      setIsMemberAppLoading(false);
+    }, 800);
+  };
+
+  const handleCollectorAppDownload = () => {
+    setIsCollectorAppLoading(true);
+    window.setTimeout(() => {
+      // android or ios download link based on the user's device can be handled here
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      openAppStore(isIOS ? collectorAppStores.android : collectorAppStores.ios);
+      setIsCollectorAppLoading(false);
+    }, 800);
+  };
+
   const memberAppStores =  {
     android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member_1002.apk',
-    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
+    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member_1002.apk',
   };
 
   const collectorAppStores = {
     android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
     ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1002.apk',
   };
-
-  const apkUrlMem = `/${selectedApp === 'member' ? 'mobAPK/Nofino_Member_1002.apk' : 'mobAPK/Nofino_Collector_1002.apk'}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
@@ -753,21 +774,24 @@ const TopBar = () => {
                 Manage your accounts, transfer funds, and track transactions on the go
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <a href={memberAppStores.android}
-                    onClick={() => openAppStore(memberAppStores.android)}
-                    download={apkUrlMem}
+                
+                  <button
+                    type="button"
+                    onClick={handleMemberAppDownload}
+                    disabled={isMemberAppLoading}
+                    aria-busy={isMemberAppLoading}
                     className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-[1.02] transform"
                   >
-                    <FaAndroid size={24} />
+                    {isMemberAppLoading ? <FaSpinner size={24} className="animate-spin" /> : <FaAndroid size={24} />}
                     <div className="text-left">
-                      <div className="text-xs font-normal opacity-90">Download for</div>
-                      <div className="font-semibold">Android</div>
+                      <div className="text-xs font-normal opacity-90">{isMemberAppLoading ? "Preparing download" : "Download for"}</div>
+                      <div className="font-semibold">{isMemberAppLoading ? "Loading..." : "Android"}</div>
                     </div>
-                  </a>
+                  </button>
                   
                   <a href={memberAppStores.ios}
                     onClick={() => openAppStore(memberAppStores.ios)}
-                    download={apkUrlMem}
+                    download={true}
                     className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all bg-gray-800 rounded-lg hover:bg-gray-700 hover:shadow-lg hover:scale-[1.02] transform dark:bg-gray-700 dark:hover:bg-gray-600"
                   >
                     <FaApple size={24} />
@@ -776,6 +800,7 @@ const TopBar = () => {
                       <div className="font-semibold">iOS</div>
                     </div>
                   </a>
+
               </div>
               <div className="p-3 mt-4 rounded-lg bg-blue-50 dark:bg-blue-900/20">
                 <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -798,13 +823,16 @@ const TopBar = () => {
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <button
-                    onClick={() => openAppStore(collectorAppStores.android)}
+                  type="button"
+                    onClick={handleCollectorAppDownload}
+                    disabled={isCollectorAppLoading}
+                    aria-busy={isCollectorAppLoading}
                     className="flex items-center justify-center gap-3 px-4 py-3 text-white transition-all rounded-lg bg-gradient-to-r from-[#228296] to-[#6f3c85] hover:shadow-lg hover:scale-[1.02] transform"
                   >
-                    <FaAndroid size={24} />
+                    {isCollectorAppLoading ? <FaSpinner size={24} className="animate-spin" /> : <FaAndroid size={24} />}
                     <div className="text-left">
-                      <div className="text-xs font-normal opacity-90">Download for</div>
-                      <div className="font-semibold">Android</div>
+                      <div className="text-xs font-normal opacity-90">{isCollectorAppLoading ? "Preparing download" : "Download for"}</div>
+                      <div className="font-semibold">{isCollectorAppLoading ? "Loading..." : "Android"}</div>
                     </div>
                   </button>
                   
