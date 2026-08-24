@@ -37,14 +37,14 @@ const AboutSection = () => {
             <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
               Welcome to{' '}
               <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
-                NOFINO CREDIT
+                NOFINO THRIFT & CREDIT
               </span>
             </h2>
             <h3 className="mb-4 text-xl text-gray-600 dark:text-gray-300">
               Co-Operative Society Ltd.
             </h3>
             <p className="mb-6 leading-relaxed text-justify text-gray-600 dark:text-gray-200">
-              Nofino Credit Co-Operative Society Ltd. is not just a banking institution — it's a social initiative
+              Nofino Thrift & Credit Co-Operative Society Ltd. is not just a banking institution — it's a social initiative
               dedicated to understanding and supporting the financial needs of people, especially in
               rural areas. Our services are available 365 days a year, from 9:00 AM to 7:00 PM.
             </p>
