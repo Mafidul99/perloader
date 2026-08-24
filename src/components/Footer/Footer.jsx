@@ -90,13 +90,13 @@ const Footer = () => {
 
 
   const memberAppStores =  {
-    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member.apk',
-    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member.apk',
+    android: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Member_1.0.0.2.apk',
+    ios: import.meta.env.VITE_APP_APK_MEMBERS_URL || '../../../public/mobAPK/Nofino_Collector_1.0.0.2.apk',
   };
 
   const collectorAppStores = {
-    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector.apk',
-    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector.apk',
+    android: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1.0.0.2.apk',
+    ios: import.meta.env.VITE_APP_APK_COLLECTOR_URL || '../../../public/mobAPK/Nofino_Collector_1.0.0.2.apk',
   };
 
   // Mobile Banking Modal Component
