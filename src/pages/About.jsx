@@ -37,7 +37,7 @@ const AboutSection = () => {
             <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
               Welcome to{' '}
               <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
-                NOFINO THRIFT & CREDIT Co-Operative Society Ltd.
+                NOFINO THRIFT & CREDIT CO-OPERATIVE SOCIETY LTD.
               </span>
             </h2>
             {/* <h3 className="mb-4 text-xl text-gray-600 dark:text-gray-300">
