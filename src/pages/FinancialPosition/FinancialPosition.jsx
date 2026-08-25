@@ -3,13 +3,13 @@ import React from 'react';
 import { TrendingUp, Building, Briefcase } from 'lucide-react';
 
 const financialData = {
-  shareCapital: '1,00,00,000',
-  reserveFunds: '3,50,40,500',
-  totalOwnFunds: '4,50,40,500',
-  deposits: '23,77,21,127',
-  loans: '10,97,21,157',
-  investments: '16,30,40,470',
-  netProfit: '5,27,197',
+  shareCapital: '20,00,000',
+  reserveFunds: '0,00,000',
+  totalOwnFunds: '20,00,000',
+  deposits: '0,00,000',
+  loans: '0,00,000',
+  investments: '0,00,000',
+  netProfit: '0,00,000',
 };
 
 const FinancialSection = () => {
@@ -20,7 +20,7 @@ const FinancialSection = () => {
           <h2 className="mb-4 text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
             Financial Year Position{' '}
             <span className="bg-gradient-to-r from-[#228296] to-[#6f3c85] bg-clip-text text-transparent">
-              2024-2025
+              2026-2027
             </span>
           </h2>
         </div>
