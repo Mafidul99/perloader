@@ -31,9 +31,9 @@ const AboutUs = () => {
   ];
 
   const leadershipTeam = [
-    { name: 'Mr. Rajesh Sharma', position: 'Chairman', image: 'https://randomuser.me/api/portraits/women/6.jpg' },
+    { name: 'Mr. Mafidul Islam', position: 'Chairman', image: 'https://randomuser.me/api/portraits/women/6.jpg' },
+    { name: 'Mr. Mohibul Hussain', position: 'CEO', image: 'https://randomuser.me/api/portraits/women/8.jpg' },
     { name: 'Mrs. Priya Mehta', position: 'Managing Director', image: 'https://randomuser.me/api/portraits/men/7.jpg' },
-    { name: 'Mr. Amit Kumar', position: 'CEO', image: 'https://randomuser.me/api/portraits/women/8.jpg' },
     { name: 'Dr. Sneha Patil', position: 'Board Member', image: 'https://randomuser.me/api/portraits/women/4.jpg' }
   ];
 
@@ -51,9 +51,9 @@ const AboutUs = () => {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="container relative px-4 py-10 mx-auto md:py-8">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="mb-2 text-4xl font-bold md:text-5xl lg:text-6xl">About NCOSL</h1>
+            <h1 className="mb-2 text-4xl font-bold md:text-5xl lg:text-6xl">About NTCCSL</h1>
             <p className="text-lg md:text-xl text-white/90">
-              Empowering financial dreams since 1995 with trust, transparency, and technology-driven solutions.
+              Empowering financial dreams since 2026 with trust, transparency, and technology-driven solutions.
             </p>
           </div>
         </div>
@@ -80,18 +80,19 @@ const AboutUs = () => {
               </span>
               </h2>
             <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-200">
-              Nofino Co-Operative Credit Society Ltd (NCOSL) was established in 1995 with a vision to provide 
-              accessible and affordable banking solutions to every Indian. What started as a single branch in 
-              Chh. Sambhajinagar has now grown into a trusted financial institution serving over a million customers.
+              Nofino Thrift & Credit Co-Operative Society Ltd (NTCCSL) was established in 2026 with a vision to provide 
+              accessible and affordable banking solutions to every Indian. What started as a small initiative in the heart of 
+              Mandia, Mandia, Barpeta, Assam- 781308, has now grown into a trusted financial institution serving over a million customers.
             </p>
             <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-200">
-              Over the past 25+ years, we have embraced technology and innovation while staying true to our 
+              Over the past 0 years, we have embraced technology and innovation while staying true to our 
               core values of transparency, customer-centricity, and financial inclusion. Our co-operative structure 
               ensures that our members' interests always come first.
             </p>
             <div className="flex items-center gap-2 mt-6 text-[#228296]">
               <CheckCircle size={20} />
-              <span className="font-semibold">RBI Regulated & Government Approved</span>
+              <span className="font-semibold">Assam Co-operative Societies Act 2007 (Assam act No. IV of  2012) 
+                amendment and as per RBI Guidelines</span>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
