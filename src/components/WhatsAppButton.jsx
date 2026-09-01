@@ -319,7 +319,7 @@ const WhatsAppButton = () => {
             <div className="grid grid-cols-3 gap-2 mt-3">
               <button
                 type="button"
-                onClick={() => handleAction('https://wa.me/917002079156?text=I%20want%20more%20information%2C%20Please%20Contact%20Me.')}
+                onClick={() => handleAction('https://wa.me/919282956845?text=I%20want%20more%20information%2C%20Please%20Contact%20Me.')}
                 className="group flex items-center justify-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50/80 px-2 py-2.5 text-xs font-medium text-emerald-700 transition hover:bg-emerald-100 hover:scale-105 hover:shadow-md active:scale-95 dark:border-emerald-800/30 dark:bg-emerald-900/20 dark:text-emerald-400 dark:hover:bg-emerald-900/40"
               >
                 <MessageCircle size={14} className="transition group-hover:scale-110" />
@@ -328,7 +328,7 @@ const WhatsAppButton = () => {
 
               <button
                 type="button"
-                onClick={() => handleAction('tel:+917767006627')}
+                onClick={() => handleAction('tel:+919282956845')}
                 className="group flex items-center justify-center gap-1.5 rounded-xl border border-[#228296]/20 bg-[#228296]/10 px-2 py-2.5 text-xs font-medium text-[#228296] transition hover:bg-[#228296]/20 hover:scale-105 hover:shadow-md active:scale-95 dark:border-[#228296]/30 dark:bg-[#228296]/20 dark:text-[#228296] dark:hover:bg-[#228296]/30"
               >
                 <Phone size={14} className="transition group-hover:scale-110" />
@@ -337,7 +337,7 @@ const WhatsAppButton = () => {
 
               <button
                 type="button"
-                onClick={() => handleAction('mailto:info@ncosl.com')}
+                onClick={() => handleAction('mailto:chairman@ntccsl.in')}
                 className="group flex items-center justify-center gap-1.5 rounded-xl border border-[#6f3c85]/20 bg-[#6f3c85]/10 px-2 py-2.5 text-xs font-medium text-[#6f3c85] transition hover:bg-[#6f3c85]/20 hover:scale-105 hover:shadow-md active:scale-95 dark:border-[#6f3c85]/30 dark:bg-[#6f3c85]/20 dark:text-[#6f3c85] dark:hover:bg-[#6f3c85]/30"
               >
                 <Mail size={14} className="transition group-hover:scale-110" />
