@@ -120,10 +120,10 @@ const ContactBar = () => {
           <div className="flex items-center gap-2">
             <Phone size={16} className="text-[#228296]" />
             <a
-              href="tel:+916002562417"
+              href="tel:+919282956845"
               className="hover:text-[#6f3c85] transition-colors"
             >
-              +91 6002562417
+              +91 9282956845
             </a>
           </div>
           <div className="flex items-center gap-2">

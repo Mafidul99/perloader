@@ -83,8 +83,8 @@ const Contact = () => {
       title: 'Phone Numbers',
       details: [
         { label: 'Toll Free', value: '1800 123 4567', href: 'tel:18001234567' },
-        { label: 'Support', value: '+91 6002561417', href: 'tel:+916002561417' },
-        { label: 'WhatsApp', value: '+91 7002079156', href: 'https://wa.me/917002079156' }
+        { label: 'Support', value: '+91 9282956845', href: 'tel:+919282956845' },
+        { label: 'WhatsApp', value: '+91 9282956845', href: 'https://wa.me/919282956845' }
       ],
       color: 'from-blue-500 to-cyan-500'
     },
@@ -124,32 +124,32 @@ const Contact = () => {
     {
       name: 'Head Office - Assam, India',
       address: 'Mandia, Mandia, Barpeta, Assam, India - 781308',
-      phone: '+91 6002562417',
-      email: 'ho@ncosl.com',
+      phone: '+91 9282956845',
+      email: 'ho@ncosl.in',
       timings: 'Mon-Sat: 9:00 AM - 6:00 PM',
       manager: 'Mr. Mafidul Islam'
     },
     {
       name: 'Mumbai Branch',
       address: 'Andheri East, Near Airport Road, Mumbai - 400099',
-      phone: '+91 22 12345678',
-      email: 'mumbai@shantishwar.com',
+      phone: '+91 9282956845',
+      email: 'mumbai@ntccsl.in',
       timings: 'Mon-Sat: 9:30 AM - 5:30 PM',
       manager: 'Ms. Priya Patel'
     },
     {
       name: 'Pune Branch',
       address: 'FC Road, Shivajinagar, Pune - 411005',
-      phone: '+91 20 12345678',
-      email: 'pune@shantishwar.com',
+      phone: '+91 9282956845',
+      email: 'pune@ntccsl.in',
       timings: 'Mon-Sat: 9:30 AM - 5:30 PM',
       manager: 'Mr. Suresh Kulkarni'
     },
     {
       name: 'Nashik Branch',
       address: 'College Road, Near CBS, Nashik - 422005',
-      phone: '+91 253 1234567',
-      email: 'nashik@shantishwar.com',
+      phone: '+91 9282956845',
+      email: 'nashik@ntccsl.in',
       timings: 'Mon-Sat: 9:30 AM - 5:30 PM',
       manager: 'Dr. Anjali Deshmukh'
     }
