@@ -125,8 +125,8 @@ const Contact = () => {
       name: 'Head Office - Assam, India',
       address: 'Mandia, Mandia, Barpeta, Assam, India - 781308',
       phone: '+91 9282956845',
-      email: 'ho@ncosl.in',
-      timings: 'Mon-Sat: 9:00 AM - 6:00 PM',
+      email: 'cmd@ntccsl.in',
+      timings: 'Mon-Sat: 10:00 AM - 4:00 PM',
       manager: 'Mr. Mafidul Islam'
     },
     {
@@ -134,7 +134,7 @@ const Contact = () => {
       address: 'Andheri East, Near Airport Road, Mumbai - 400099',
       phone: '+91 9282956845',
       email: 'mumbai@ntccsl.in',
-      timings: 'Mon-Sat: 9:30 AM - 5:30 PM',
+      timings: 'Mon-Sat: 10:00 AM - 4:00 PM',
       manager: 'Ms. Priya Patel'
     },
     {
@@ -142,7 +142,7 @@ const Contact = () => {
       address: 'FC Road, Shivajinagar, Pune - 411005',
       phone: '+91 9282956845',
       email: 'pune@ntccsl.in',
-      timings: 'Mon-Sat: 9:30 AM - 5:30 PM',
+      timings: 'Mon-Sat: 10:00 AM - 4:00 PM',
       manager: 'Mr. Suresh Kulkarni'
     },
     {
@@ -150,7 +150,7 @@ const Contact = () => {
       address: 'College Road, Near CBS, Nashik - 422005',
       phone: '+91 9282956845',
       email: 'nashik@ntccsl.in',
-      timings: 'Mon-Sat: 9:30 AM - 5:30 PM',
+      timings: 'Mon-Sat: 10:00 AM - 4:00 PM',
       manager: 'Dr. Anjali Deshmukh'
     }
   ];
