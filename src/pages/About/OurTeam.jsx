@@ -22,7 +22,7 @@ import {
 import {  FaTwitter, FaFacebookF} from "react-icons/fa";
 
 // TeamImage component 
-const TeamImage1 = "../src/assets/ourTeam/mafidul.jpg";
+const TeamImage1 = "../../../src/assets/ourTeam/mafidul.jpg";
 const TeamImage2 = "../../../src/assets/ourTeam/mohibul.jpeg";
 const TeamImage3 = "https://randomuser.me/api/portraits/men/3.jpg";
 const TeamImage4 = "https://randomuser.me/api/portraits/women/4.jpg";
