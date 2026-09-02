@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import {  FaTwitter, FaFacebookF} from "react-icons/fa";
 
-// TeamImage component to handle image loading errors
+// TeamImage component 
 const TeamImage1 = "../../assets/ourTeam/mafidul.jpg";
 const TeamImage2 = "../../assets/ourTeam/mohibul.jpg";
 const TeamImage3 = ".https://randomuser.me/api/portraits/men/3.jpg";
