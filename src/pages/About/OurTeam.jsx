@@ -21,6 +21,17 @@ import {
 } from "lucide-react";
 import {  FaTwitter, FaFacebookF} from "react-icons/fa";
 
+// TeamImage component to handle image loading errors
+const TeamImage1 = "../../assets/ourTeam/mafidul.jpg";
+const TeamImage2 = "../../assets/ourTeam/mohibul.jpg";
+const TeamImage3 = ".https://randomuser.me/api/portraits/men/3.jpg";
+const TeamImage4 = "https://randomuser.me/api/portraits/women/4.jpg";
+const TeamImage5 = "https://randomuser.me/api/portraits/men/5.jpg";
+const TeamImage6 = "https://randomuser.me/api/portraits/women/6.jpg";
+const TeamImage7 = "https://randomuser.me/api/portraits/men/7.jpg";
+const TeamImage8 = "https://randomuser.me/api/portraits/women/8.jpg";
+
+
 const OurTeam = () => {
   const [selectedMember, setSelectedMember] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,37 +41,37 @@ const OurTeam = () => {
   const leadershipTeam = [
     {
       id: 1,
-      name: "Shri. Rajendra Patil",
+      name: "Mr. Mafidul Islam",
       position: "Chairman & Managing Director",
-      experience: "35+ years in Banking",
-      education: "MBA, Banking & Finance",
+      experience: "1+ years in Banking",
+      education: "HS, Banking & Finance",
       achievements: "Banking Excellence Award 2020",
-      image: "https://randomuser.me/api/portraits/men/1.jpg",
-      email: "rajendra.patil@shantishwar.com",
-      phone: "+91 98765 43210",
+      image: TeamImage1,
+      email: "chairman@ntccsl.in",
+      phone: "+91 7002079156",
       linkedin: "#",
       bio: "Visionary leader with over three decades of experience in the banking sector. Pioneered digital transformation initiatives across multiple organizations. Under his leadership, Shantishwar Bank has grown exponentially, setting new benchmarks in customer service and operational excellence.",
       socialLinks: { twitter: "#", facebook: "#" },
-      location: "Mumbai, India",
-      joinedDate: "January 2005",
-      languages: ["English", "Hindi", "Marathi"],
+      location: "Barpeta, India",
+      joinedDate: "January 2026",
+      languages: ["English", "Hindi", "Assamese", "Bengali"],
     },
     {
       id: 2,
-      name: "Smt. Anjali Deshmukh",
+      name: "Mr. Mohibul Hussain",
       position: "Chief Executive Officer",
-      experience: "28+ years in Banking",
-      education: "CA, IIM Ahmedabad",
-      achievements: "Women in Banking Leadership Award",
-      image: "https://randomuser.me/api/portraits/women/2.jpg",
-      email: "anjali.deshmukh@shantishwar.com",
-      phone: "+91 98765 43211",
+      experience: "1+ years in Banking",
+      education: "BA, English Literature",
+      achievements: "Banking Leadership Award",
+      image: TeamImage2,
+      email: "ceo@ntccsl.in",
+      phone: "+91 7086788028",
       linkedin: "#",
       bio: "Strategic leader focused on sustainable growth and customer-centric innovations. Transformed operational efficiency by 40%. Anjali has been instrumental in driving the bank's digital transformation journey and expanding its presence across new markets.",
       socialLinks: { twitter: "#", facebook: "#" },
-      location: "Pune, India",
-      joinedDate: "March 2008",
-      languages: ["English", "Hindi", "Marathi"],
+      location: "Barpeta, India",
+      joinedDate: "January 2026",
+      languages: ["English", "Hindi", "Assamese", "Bengali"],
     },
     {
       id: 3,
@@ -69,7 +80,7 @@ const OurTeam = () => {
       experience: "25+ years in Finance",
       education: "CFA, CPA",
       achievements: "Best CFO Award 2022",
-      image: "https://randomuser.me/api/portraits/men/3.jpg",
+      image: TeamImage3,
       email: "vikram.singh@shantishwar.com",
       phone: "+91 98765 43212",
       linkedin: "#",
@@ -86,7 +97,7 @@ const OurTeam = () => {
       experience: "18+ years in Tech",
       education: "MTech, IIT Bombay",
       achievements: "Digital Innovator of the Year",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      image: TeamImage4,
       email: "priya.sharma@shantishwar.com",
       phone: "+91 98765 43213",
       linkedin: "#",
@@ -103,7 +114,7 @@ const OurTeam = () => {
       experience: "22+ years in Banking",
       education: "PGDM, XLRI",
       achievements: "Operational Excellence Award",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
+      image: TeamImage5,
       email: "suresh.joshi@shantishwar.com",
       phone: "+91 98765 43214",
       linkedin: "#",
@@ -120,7 +131,7 @@ const OurTeam = () => {
       experience: "20+ years in Service",
       education: "MSW, TISS Mumbai",
       achievements: "Customer Service Excellence Award",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      image: TeamImage6,
       email: "meera.nair@shantishwar.com",
       phone: "+91 98765 43215",
       linkedin: "#",
@@ -137,7 +148,7 @@ const OurTeam = () => {
       experience: "20+ years in Risk Management",
       education: "FRM, PRM",
       achievements: "Risk Management Professional of the Year",
-      image: "https://randomuser.me/api/portraits/men/7.jpg",
+      image: TeamImage7,
       email: "amit.kulkarni@shantishwar.com",
       phone: "+91 98765 43216",
       linkedin: "#",
@@ -154,7 +165,7 @@ const OurTeam = () => {
       experience: "18+ years in HR",
       education: "MBA, HR",
       achievements: "Best HR Leader Award 2023",
-      image: "https://randomuser.me/api/portraits/women/8.jpg",
+      image: TeamImage8,
       email: "neha.gupta@shantishwar.com",
       phone: "+91 98765 43217",
       linkedin: "#",
