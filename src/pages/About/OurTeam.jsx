@@ -22,8 +22,8 @@ import {
 import {  FaTwitter, FaFacebookF} from "react-icons/fa";
 
 // TeamImage component 
-const TeamImage1 = "../../../public/ourTeam/mafidul.jpg";
-const TeamImage2 = "../../../public/ourTeam/mohibul.jpeg";
+const TeamImage1 = "../../../ourTeam/mafidul.jpg";
+const TeamImage2 = "../../../ourTeam/mohibul.jpeg";
 const TeamImage3 = "https://randomuser.me/api/portraits/men/3.jpg";
 const TeamImage4 = "https://randomuser.me/api/portraits/women/4.jpg";
 const TeamImage5 = "https://randomuser.me/api/portraits/men/5.jpg";
