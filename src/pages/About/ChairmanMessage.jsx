@@ -74,7 +74,7 @@ const ChairmanMessage = () => {
               <Quote size={40} className="text-[#6f3c85]/60 absolute -top-2 -left-2" />
               <div className="relative z-10 p-6 shadow-lg rounded-2xl dark:bg-gray-900/50 ">
                 <p className="text-lg italic leading-relaxed text-gray-700 dark:text-gray-300">
-                  "At Shantishwar Bank, we believe that banking is not just about transactions, 
+                  "At {Fullname}, we believe that banking is not just about transactions, 
                   but about building lasting relationships and empowering dreams. Our commitment 
                   to excellence and customer-centric approach has been the cornerstone of our 
                   success story."
@@ -89,7 +89,7 @@ const ChairmanMessage = () => {
               </p>
               <p>
                 It is with immense pride and gratitude that I address you today. Over the years, 
-                Shantishwar Bank has grown from strength to strength, driven by our unwavering 
+                {Fullname} has grown from strength to strength, driven by our unwavering 
                 commitment to financial inclusion, innovation, and integrity.
               </p>
               <p>
