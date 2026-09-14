@@ -153,6 +153,9 @@ const OurStory = () => {
     return () => observer.disconnect();
   }, []);
 
+
+  const Fullname = import.meta.env.VITE_APP_FULL_NAME || 'Nofino Thrift & Credit Cooperative Society Ltd.';
+
   return (
     <div className="overflow-hidden dark:bg-gray-800 bg-slate-50">
       <div className="mt-10 mb-10 text-center">
@@ -217,22 +220,22 @@ const OurStory = () => {
                   </h2>
                 </div>
                 <p className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-400">
-                  Founded in 1995 by visionary entrepreneurs,{" "}
+                  Founded in 2026 by visionary entrepreneurs,{" "}
                   <span className="font-semibold text-[#6f3c85]">
-                    Shantishwar Bank
+                    {Fullname}
                   </span>{" "}
-                  started as a small cooperative with a big dream - to make
-                  banking accessible to everyone. What began as a single branch
+                  started as a small cooperative with a big dream,
+                  accessible to everyone. What began as a single branch
                   in{" "}
                   <span className="font-semibold text-[#228296]">
-                    Chhatrapati Sambhajinagar
+                    Mafidul Islam
                   </span>{" "}
                   has grown into a trusted financial institution serving
                   thousands of families across the region.
                 </p>
                 <div className="p-6 rounded-xl bg-gradient-to-r from-purple-50 to-teal-50 ">
                   <p className="italic leading-relaxed text-gray-700">
-                    "Our name 'Shantishwar' symbolizes peace and prosperity,
+                    "Our name '{Fullname}' symbolizes peace and prosperity,
                     values that have guided us through every decision we've
                     made. From providing small loans to local businesses to
                     helping families achieve their dream of home ownership,
