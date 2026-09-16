@@ -20,7 +20,8 @@ const Loader = () => {
     return <Preloader onLoadingComplete={() => setLoading(false)} />;
   }
   return (
-    <div>Loader</div>
+    <>
+    </>
   )
 }
 
