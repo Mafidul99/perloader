@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import MainLogoWeb from "../../assets/SVG_website_logo.svg";
 import LoginDropdown from "./LoginDropdown";
+import PayButton from "../../pages/Paybutton/PayButton";
 
 const ContactBar = () => {
   const navigate = useNavigate();
@@ -140,6 +141,8 @@ const ContactBar = () => {
             <span>Reg No: B-08/2026-27</span>
           </div>
         </div>
+
+        <PayButton/>
 
         {/* Login Admin User Drop down Button */}
           <LoginDropdown/>
