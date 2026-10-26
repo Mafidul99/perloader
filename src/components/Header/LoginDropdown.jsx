@@ -29,7 +29,7 @@ const LoginDropdown = () => {
   }, []);
 
   const AdminUrl = import.meta.env.VITE_APP_ADMIN_URL || 'https://nofino.ccsltd.in';
-  const UserUrl = import.meta.env.VITE_APP_USER_URL || 'https://nofino.ccsltd.in/User_Login.aspx';
+  const UserUrl = import.meta.env.VITE_APP_USER_URL || 'https://app.ntccsl.in/';
 
   const loginOptions = [
     {
